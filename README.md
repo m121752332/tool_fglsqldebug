@@ -5,7 +5,7 @@
 This tool can read an FGLSQLDEBUG output, to show the log records in a graphical interface.
 You can then sort, search and filter log records, to find what you are looking for.
 
-![FGLSQLDEBUG viewer (GDC)](https://github.com/m121752332/tool_fglsqldebug/raw/master/docs/fglsqldebug-screen-001.png)
+![FGLSQLDEBUG viewer (GDC)](https://github.com/m121752332/tool_fglsqldebug/blob/master/docs/fglsqldebug-screen-001.png)
 
 ## 使用需求
 
