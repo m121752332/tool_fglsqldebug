@@ -1,3 +1,4 @@
+#繁體中文化 BY Tiger.Tseng
 IMPORT os
 IMPORT util
 
