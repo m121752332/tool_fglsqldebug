@@ -1,9 +1,9 @@
 # FGLSQLDEBUG log viewer
 
-## 敘述
+## 工具描述
 
-This tool can read an FGLSQLDEBUG output, to show the log records in a graphical interface.
-You can then sort, search and filter log records, to find what you are looking for.
+本工具可以讀取FGLSQLDEBUG輸出，並在圖形介面中顯示日誌記錄。  
+然後，您可以對日誌記錄進行排序、搜尋和過濾，以找到您要尋找的內容。
 
 ![FGLSQLDEBUG viewer (GDC)](https://github.com/m121752332/tool_fglsqldebug/blob/master/docs/fglsqldebug-screen-001.png)
 
