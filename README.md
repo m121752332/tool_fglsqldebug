@@ -14,30 +14,30 @@ You can then sort, search and filter log records, to find what you are looking f
 * Genero Studio 2.40+
 * GNU Make
 
-## Compilation from command line
+## 指令視窗用法
 
 1. make clean all
 
-## Compilation in Genero Studio
+## Genero Studio開發工具用法
 
-1. Load the fglsqldebug.4pw project
-2. Build the project
+1. 讀取 fglsqldebug.4pw 專案檔
+2. 編譯整個專案包
 
 ## 用法
 
-1. Get an FGLSQLDEBUG log to analyze
-2. Define FGLSOURCEPATH to the .4gl sources that generated the FGLSQLDEBUG log
-3. Run the tool with fglrun fglsqldebug [-f logfile [-r]]
-4. In the first field, you can load another log file
-5. Use the Filter panel on bottom of the form to filter log records
+1. 取得 FGLSQLDEBUG 記錄檔做於後續分析，TIPTOP可用r.r2d 收集執行後的結果
+2. 設置 FGLSOURCEPATH 環境變數把4gl的目錄添加用於產生 FGLSQLDEBUG 後的紀錄
+3. 執行工具語法 fglrun fglsqldebug [-f logfile [-r]]
+4. 畫面的第一行可以挑選LOG檔讀取產生的紀錄
+5. 使用過濾器可以塞選LOG的紀錄
 6. Run profiling statistics for find time consuming SQL statements
 
 The log records are loaded into an SQLite database created automatically if it does not exist.
 One database file is created for each log.
 By default, the tool does not re-parse the log file if the database exists already.
-You can force a re-parsing with the -r option.
+你也能強制重取LOG檔透過 -r 參數處理
 
-The tool can also show the source file, if the FGLSOURCEPATH environment variables is defined.
+若 FGLSOURCEPATH 環境變數有做好定義，本工具也能檢閱程式碼
 
 ## 請參考原廠文件
 
