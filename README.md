@@ -49,10 +49,17 @@
 
 已繁體中文處理，使用於TIPTOP GP 5.3除錯過
 
+## 程式修改
+
+TIPTOP中請用開發LICENSE去編譯fglsqldebug.4gl
+```
+fglcomp fglsqldebug
+```
+
 ## 畫面修改
 
 若自行編輯畫面後，可透過原廠指令編譯畫面
-```程式類型=
+```程式類型=java
 gsform -M -i -dbname ds -keep fglsqldebug.4fd
 gsform -M -i -dbname ds -keep stmtstats.4fd
 gsform -M -i -dbname ds -keep showtext.4fd
