@@ -30,14 +30,14 @@
 3. 執行工具語法 fglrun fglsqldebug [-f logfile [-r]]
 4. 畫面的第一行可以挑選LOG檔讀取產生的紀錄
 5. 使用過濾器可以塞選LOG的紀錄
-6. Run profiling statistics for find time consuming SQL statements
+6. 執行分析統計以尋找耗時的 SQL 語句
 
-The log records are loaded into an SQLite database created automatically if it does not exist.
-One database file is created for each log.
-By default, the tool does not re-parse the log file if the database exists already.
-你也能強制重取LOG檔透過 -r 參數處理
+如果log記錄不存在資料庫中，則會將log檔轉載入到TIPTOP的ds資料庫中，並且為每個日誌建立成一個檔案集，
+預設情況下，如果資料庫內已存在LOG資料，該工具不會重新解析日誌檔案內容，
+因此你也能強制重取LOG檔透過 -r 參數處理。
 
-若 FGLSOURCEPATH 環境變數有做好定義，本工具也能檢閱程式碼
+若 FGLSOURCEPATH 環境變數有做好定義，本工具也能檢閱程式碼!!
+![檢視](https://github.com/m121752332/tool_fglsqldebug/blob/master/docs/fglsqldebug-screen-003.png)
 
 ## 請參考原廠文件
 
