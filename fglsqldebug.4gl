@@ -422,6 +422,9 @@ FUNCTION show_source(srcfile,srcline)
            ch base.Channel,
            tmp STRING,
            x INTEGER
+           
+    #顯示程式碼參數資訊
+    DISPLAY SFMT(" > CALL show_source(%1,%2)",srcfile,srcline)
     IF fglsourcepath IS NULL THEN
        CALL mbox_ok("Define FGLSOURCEPATH to find application sources")
        RETURN
@@ -443,6 +446,8 @@ FUNCTION show_source(srcfile,srcline)
        LET arr[x].line = x
        LET arr[x].text = ch.readLine()
     END WHILE
+    
+    #開啟視窗
     OPEN WINDOW w_source WITH FORM ("showtext")
          ATTRIBUTES(TEXT=tmp,STYLE="dialog")
     DISPLAY ARRAY arr TO sr.* ATTRIBUTES(CANCEL=FALSE)
@@ -450,6 +455,7 @@ FUNCTION show_source(srcfile,srcline)
            CALL DIALOG.setCurrentRow("sr",srcline)
     END DISPLAY
     CLOSE WINDOW w_source
+    
 END FUNCTION
 
 FUNCTION create_empty_file(fn)
@@ -543,7 +549,7 @@ FUNCTION init_database(filename, force_reload)
 
     IF reuse THEN RETURN 1, tmpfile END IF
 
-    DISPLAY "CREATE TABLE connection"
+    DISPLAY "CREATE TEMP TABLE connection"
     CREATE TEMP TABLE connection (
          connid INTEGER,
          name VARCHAR(50),
@@ -553,7 +559,7 @@ FUNCTION init_database(filename, force_reload)
          dtype VARCHAR(3)
     )
 
-    DISPLAY "CREATE TABLE sqlvar"
+    DISPLAY "CREATE TEMP TABLE sqlvar"
     CREATE TEMP TABLE sqlvar (
          cmdid INTEGER,
          vartype VARCHAR(1),
@@ -564,7 +570,7 @@ FUNCTION init_database(filename, force_reload)
          PRIMARY KEY (cmdid, vartype, position)
     )
 
-    DISPLAY "CREATE TABLE drvmsg"
+    DISPLAY "CREATE TEMP TABLE drvmsg"
     CREATE TEMP TABLE drvmsg (
          cmdid INTEGER,
          position SMALLINT,
@@ -574,7 +580,7 @@ FUNCTION init_database(filename, force_reload)
          PRIMARY KEY (cmdid, position)
     )
 
-    DISPLAY "CREATE TABLE command"
+    DISPLAY "CREATE TEMP TABLE command"
     CREATE TEMP TABLE command (
          cmdid INTEGER PRIMARY KEY,
          connid INTEGER,
