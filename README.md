@@ -52,19 +52,22 @@
 ## 程式修改說明
 
 方法一: TIPTOP中請用開發LICENSE去編譯fglsqldebug.4gl
-```
+```console
 fglcomp fglsqldebug
 ```
 
 方法二: 使用shell r.cs 指定開發目錄也能編譯 [default is (/u1/genero/fgl.dev]
-```
-r.cs fglsqldebug
+```console
+tiptop@vs:~$ r.cs fglsqldebug
+Please specify your genero development path
+
+default is (/u1/genero/fgl.dev):
 ```
 
 ## 畫面修改說明
 
 若自行編輯畫面後，可透過原廠指令編譯畫面
-```程式類型=java
+```console
 gsform -M -i -dbname ds -keep fglsqldebug.4fd
 gsform -M -i -dbname ds -keep fgltprogress.4fd
 gsform -M -i -dbname ds -keep stmtstats.4fd
