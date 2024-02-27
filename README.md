@@ -7,7 +7,7 @@
 
 ![FGLSQLDEBUG viewer (GDC)](https://github.com/m121752332/tool_fglsqldebug/blob/master/docs/fglsqldebug-screen-001.png)
 
-## 使用需求
+## 工具版本需求
 
 * Genero BDL 2.40+
 * Genero Desktop Client 2.40+
@@ -23,7 +23,7 @@
 1. 讀取 fglsqldebug.4pw 專案檔
 2. 編譯整個專案包
 
-## 用法
+## 操作說明
 
 1. 取得 FGLSQLDEBUG 記錄檔做於後續分析，TIPTOP可用r.r2d 收集執行後的結果
 2. 設置 FGLSOURCEPATH 環境變數把4gl的目錄添加用於產生 FGLSQLDEBUG 後的紀錄
@@ -45,18 +45,18 @@
 更多詳細用法關於 FGLSQLDEBUG 和 FGLSOURCEPATH 環境變數介紹
 
 
-## 中文化
+## 繁體中文
 
 已繁體中文處理，使用於TIPTOP GP 5.3除錯過
 
-## 程式修改
+## 程式修改說明
 
 TIPTOP中請用開發LICENSE去編譯fglsqldebug.4gl
 ```
 fglcomp fglsqldebug
 ```
 
-## 畫面修改
+## 畫面修改說明
 
 若自行編輯畫面後，可透過原廠指令編譯畫面
 ```程式類型=java
