@@ -66,6 +66,7 @@ r.cs fglsqldebug
 若自行編輯畫面後，可透過原廠指令編譯畫面
 ```程式類型=java
 gsform -M -i -dbname ds -keep fglsqldebug.4fd
+gsform -M -i -dbname ds -keep fgltprogress.4fd
 gsform -M -i -dbname ds -keep stmtstats.4fd
 gsform -M -i -dbname ds -keep showtext.4fd
 gsform -M -i -dbname ds -keep drvmsgs.4fd
