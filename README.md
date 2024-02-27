@@ -41,8 +41,8 @@ The tool can also show the source file, if the FGLSOURCEPATH environment variabl
 
 ## 請參考原廠文件
 
-See [Genero BDL documentation](http://www.4js.com/download/documentation) for more details about
-FGLSQLDEBUG and FGLSOURCEPATH environment variables.
+參考 [Genero BDL documentation](http://www.4js.com/download/documentation) 
+更多詳細用法關於 FGLSQLDEBUG 和 FGLSOURCEPATH 環境變數介紹
 
 
 ## 中文化
@@ -58,3 +58,5 @@ gsform -M -i -dbname ds -keep stmtstats.4fd
 gsform -M -i -dbname ds -keep showtext.4fd
 gsform -M -i -dbname ds -keep drvmsgs.4fd
 ```
+
+參考: [gsform語法](https://4js.com/online_documentation/fjs-gst-manual-html/index.html#gst-topics/c_gst_formdesigner_designform_012.html)
