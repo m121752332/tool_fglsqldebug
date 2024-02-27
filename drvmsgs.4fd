@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm gstVersion="22800" name="ManagedForm" uid="{c8eb7129-0000-4000-83b8-63f39967f3a5}">
+  <AGSettings/>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="sr" order="" uid="{79914bd3-0000-4000-8563-1dcb70856ff5}" where="">
+    <RecordField colName="cmdid" fieldIdRef="0" name="cmdid" sqlTabName="formonly" table_alias_name="" uid="{2959c636-0000-4000-b226-8539b5a9f7a9}"/>
+    <RecordField colName="position" fieldIdRef="1" name="position" sqlTabName="formonly" table_alias_name="" uid="{a59f1f01-0000-4000-bc62-5a8f16769423}"/>
+    <RecordField colName="srcfile" fieldIdRef="2" name="srcfile" sqlTabName="formonly" table_alias_name="" uid="{53a2c4c3-0000-4000-b3ac-da00c046dab3}"/>
+    <RecordField colName="srcline" fieldIdRef="3" name="srcline" sqlTabName="formonly" table_alias_name="" uid="{d87f5462-0000-4000-bfce-13cedb1c4b06}"/>
+    <RecordField colName="message" fieldIdRef="4" name="message" sqlTabName="formonly" table_alias_name="" uid="{40ca9ba5-0000-4000-a9b4-05eb09b9e887}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="Undefined" order="" uid="{290793ab-0000-4000-928e-24a7eb81b64f}" where="">
+    <RecordField colName="msgtext" fieldIdRef="5" name="msgtext" sqlTabName="formonly" table_alias_name="" uid="{65786771-0000-4000-baa9-ead59c8e6b86}"/>
+  </Record>
+  <Form gridHeight="15" gridWidth="57" name="drvmsgs" text="資訊庫回饋訊息">
+    <Grid gridHeight="15" gridWidth="57" name="Grid1" posX="0" posY="0">
+      <Table gridHeight="12" gridWidth="55" name="table1" posX="1" posY="0" totalRows="10" unitWidth="characters" unsortableColumns="true" width="55">
+        <Phantom colName="cmdid" fieldId="0" name="cmdid" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="position" columnCount="" fieldId="1" gridHeight="1" gridWidth="4" name="position" posX="0" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="2" table_alias_name="" title="位置" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="srcfile" columnCount="" fieldId="2" gridHeight="1" gridWidth="15" name="srcfile" posX="4" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="3" table_alias_name="" title="原始碼" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="srcline" columnCount="" fieldId="3" gridHeight="1" gridWidth="5" name="srcline" posX="19" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="4" table_alias_name="" title="行" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="message" columnCount="" fieldId="4" gridHeight="1" gridWidth="26" name="message" posX="24" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="5" table_alias_name="" title="除錯訊息" widget="Edit"/>
+      </Table>
+      <TextEdit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="msgtext" columnCount="" fieldId="5" gridHeight="3" gridWidth="55" name="msgtext" posX="1" posY="12" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="6" table_alias_name="" wantNoReturns="false" widget="TextEdit"/>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewA2ADUANwA4ADYANwA3ADEALQAwADAAMAAwAC0ANAAwADAAMAAtAGIAYQBhADkALQBlAGEAZAA1ADkAYwA4AGUANgBiADgANgB9QBbbbcgAAABAOkkkpgAAAAAAAAAAAAAAAQAAAEwAewA3ADkAOQAxADQAYgBkADMALQAwADAAMAAwAC0ANAAwADAAMAAtADgANQA2ADMALQAxAGQAYwBiADcAMAA4ADUANgBmAGYANQB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEwAewAyADkAMAA3ADkAMwBhAGIALQAwADAAMAAwAC0ANAAwADAAMAAtADkAMgA4AGUALQAyADQAYQA3AGUAYgA4ADEAYgA2ADQAZgB9QBbbbcgAAABAFtttyAAAAAAAAAAAAAAAAQAAAEwAewA1ADMAYQAyAGMANABjADMALQAwADAAMAAwAC0ANAAwADAAMAAtAGIAMwBhAGMALQBkAGEAMAAwAGMAMAA0ADYAZABhAGIAMwB9QBbbbcgAAABATtttzgAAAAAAAAAAAAAAAQAAAEwAewA0ADAAYwBhADkAYgBhADUALQAwADAAMAAwAC0ANAAwADAAMAAtAGEAOQBiADQALQAwADUAZQBiADAAOQBiADkAZQA4ADgANwB9QBbbbcgAAABAWEkkpIAAAAAAAAAAAAAAAQAAAEwAewAyADkANQA5AGMANgAzADYALQAwADAAMAAwAC0ANAAwADAAMAAtAGIAMgAyADYALQA4ADUAMwA5AGIANQBhADkAZgA3AGEAOQB9QBbbbcgAAABAOkkkpgAAAAAAAAAAAAAAAQAAAEwAewBhADUAOQBmADEAZgAwADEALQAwADAAMAAwAC0ANAAwADAAMAAtAGIAYwA2ADIALQA1AGEAOABmADEANgA3ADYAOQA0ADIAMwB9QBbbbcgAAABARgAAEIAAAAAAAAAAAAAAAQAAAEwAewBkADgANwBmADUANAA2ADIALQAwADAAMAAwAC0ANAAwADAAMAAtAGIAZgBjAGUALQAxADMAYwBlAGQAYgAxAGMANABiADAANgB9QBbbbcgAAABAU9ttxcAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

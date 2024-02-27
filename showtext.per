@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/toptest/tiptop/ds4gl2/fglsqldeb/showtext.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"程式碼瀏覽")
+Grid Grid1
+{
+ <T t1                                                                                              >
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+ [line |text                                                                                        ]
+}
+END -- Grid1
+END -- showtext
+
+ATTRIBUTES
+Table t1:t1, unsortableColumns, unmovableColumns, unhidableColumns;
+Edit line=formonly.line, tabIndex=1, title=%"行號", color = red;
+Edit text=formonly.text, tabIndex=2, title=%"內文", scroll;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sr(formonly.line,formonly.text)
+END -- INSTRUCTIONS
+

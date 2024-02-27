@@ -1,0 +1,499 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form name="fglsqldebug.tmp" build="2.40.04-2081.15" text="FGLSQLDEBUG 資料庫語法除錯器" style="main2" width="46" height="4">
+  <ActionDefaultList>
+    <ActionDefault name="open" text="Open" contextMenu="no">
+      <LStr text="Open"/>
+    </ActionDefault>
+    <ActionDefault name="source" text="Source" contextMenu="no">
+      <LStr text="Source"/>
+    </ActionDefault>
+    <ActionDefault name="details" text="Details" contextMenu="no">
+      <LStr text="Details"/>
+    </ActionDefault>
+    <ActionDefault name="refresh" text="Refresh" acceleratorName="control-r" contextMenu="no">
+      <LStr text="Refresh"/>
+    </ActionDefault>
+    <ActionDefault name="f_errors" text="Errors" contextMenu="no">
+      <LStr text="Errors"/>
+    </ActionDefault>
+    <ActionDefault name="f_cursor" text="Cursor" contextMenu="no">
+      <LStr text="Cursor"/>
+    </ActionDefault>
+    <ActionDefault name="f_source" text="Source" contextMenu="no">
+      <LStr text="Source"/>
+    </ActionDefault>
+    <ActionDefault name="prev_ident" text="Same prev" acceleratorName="control-p" contextMenu="no">
+      <LStr text="Same prev"/>
+    </ActionDefault>
+    <ActionDefault name="next_ident" text="Same next" acceleratorName="control-n" contextMenu="no">
+      <LStr text="Same next"/>
+    </ActionDefault>
+    <ActionDefault name="stats_glob" text="Global Statistics" acceleratorName="control-w" contextMenu="no">
+      <LStr text="Global Statistics"/>
+    </ActionDefault>
+    <ActionDefault name="stats_stmt" text="Statement Statistics" acceleratorName="control-y" contextMenu="no">
+      <LStr text="Statement Statistics"/>
+    </ActionDefault>
+    <ActionDefault name="close" text="Close" contextMenu="no">
+      <LStr text="Close"/>
+    </ActionDefault>
+    <ActionDefault name="about" text="About" contextMenu="no">
+      <LStr text="About"/>
+    </ActionDefault>
+  </ActionDefaultList>
+  <TopMenu name="topmenu1">
+    <TopMenuGroup name="file" text="檔案">
+      <LStr text="檔案"/>
+      <TopMenuCommand name="open" text="開啟">
+        <LStr text="開啟"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="close" text="關閉">
+        <LStr text="關閉"/>
+      </TopMenuCommand>
+    </TopMenuGroup>
+    <TopMenuGroup name="view" text="檢視">
+      <LStr text="檢視"/>
+      <TopMenuCommand name="details" text="資料庫反饋">
+        <LStr text="資料庫反饋"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="source" text="程式碼">
+        <LStr text="程式碼"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="refresh" text="重新整理">
+        <LStr text="重新整理"/>
+      </TopMenuCommand>
+    </TopMenuGroup>
+    <TopMenuGroup name="filter" text="過濾">
+      <LStr text="過濾"/>
+      <TopMenuCommand name="f_errors" text="僅錯誤數據">
+        <LStr text="僅錯誤數據"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="f_cursor" text="相同指標">
+        <LStr text="相同指標"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="f_source" text="相同原始碼">
+        <LStr text="相同原始碼"/>
+      </TopMenuCommand>
+    </TopMenuGroup>
+    <TopMenuGroup name="stats" text="資料分析">
+      <LStr text="資料分析"/>
+      <TopMenuCommand name="prev_ident" text="上一個相同">
+        <LStr text="上一個相同"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="next_ident" text="下一個相同">
+        <LStr text="下一個相同"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="stats_glob" text="全部統計">
+        <LStr text="全部統計"/>
+      </TopMenuCommand>
+      <TopMenuCommand name="stats_stmt" text="語法統計">
+        <LStr text="語法統計"/>
+      </TopMenuCommand>
+    </TopMenuGroup>
+    <TopMenuGroup name="help" text="幫助">
+      <LStr text="幫助"/>
+      <TopMenuCommand name="about" text="關於">
+        <LStr text="關於"/>
+      </TopMenuCommand>
+    </TopMenuGroup>
+  </TopMenu>
+  <LStr text="FGLSQLDEBUG 資料庫語法除錯器"/>
+  <VBox name="vbox1" splitter="1">
+    <Grid name="grid1" width="94" height="31">
+      <Label name="label1" width="17" text="FGLSQLDEBUG 工具  讀取LOG檔案位置:" posY="0" posX="1" gridWidth="17">
+        <LStr text="FGLSQLDEBUG 工具  讀取LOG檔案位置:"/>
+      </Label>
+      <FormField name="formonly.filename" colName="filename" fieldId="0" sqlTabName="formonly" tabIndex="1">
+        <ButtonEdit width="70" action="open" image="file" scroll="1" posY="0" posX="20" gridWidth="72"/>
+      </FormField>
+      <Table pageSize="6" name="table1" width="92" posY="2" posX="1" gridWidth="92" gridHeight="8" tabName="+tn_0">
+        <TableColumn name="formonly.cmdid" colName="cmdid" fieldId="1" sqlTabName="formonly" tabIndex="2" text="排序">
+          <Edit width="6"/>
+          <LStr text="排序"/>
+        </TableColumn>
+        <PhantomColumn name="formonly.connid" colName="connid" fieldId="2" sqlTabName="formonly" tabIndex="59">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <TableColumn name="formonly.fglcmd" colName="fglcmd" fieldId="3" sqlTabName="formonly" tabIndex="4" text="指令">
+          <Edit width="9" scroll="1"/>
+          <LStr text="指令"/>
+        </TableColumn>
+        <PhantomColumn name="formonly.srcfile" colName="srcfile" fieldId="4" sqlTabName="formonly" tabIndex="60">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <PhantomColumn name="formonly.srcline" colName="srcline" fieldId="5" sqlTabName="formonly" tabIndex="61">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <TableColumn name="formonly.fglcursor" colName="fglcursor" fieldId="6" sqlTabName="formonly" tabIndex="7" text="Cursor 指標">
+          <Edit width="7" scroll="1"/>
+          <LStr text="Cursor 指標"/>
+        </TableColumn>
+        <PhantomColumn name="formonly.sqlcursor" colName="sqlcursor" fieldId="7" sqlTabName="formonly" tabIndex="62">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <PhantomColumn name="formonly.c_scroll" colName="c_scroll" fieldId="8" sqlTabName="formonly" tabIndex="63">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <PhantomColumn name="formonly.c_hold" colName="c_hold" fieldId="9" sqlTabName="formonly" tabIndex="64">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <TableColumn name="formonly.sqlcode" colName="sqlcode" fieldId="10" sqlTabName="formonly" tabIndex="11" text="sqlcode">
+          <Edit width="6"/>
+          <LStr text="sqlcode"/>
+        </TableColumn>
+        <PhantomColumn name="formonly.sqlerrd2" colName="sqlerrd2" fieldId="11" sqlTabName="formonly" tabIndex="65">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <PhantomColumn name="formonly.sqlerrd3" colName="sqlerrd3" fieldId="12" sqlTabName="formonly" tabIndex="66">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <PhantomColumn name="formonly.sqlerrm" colName="sqlerrm" fieldId="13" sqlTabName="formonly" tabIndex="67">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <PhantomColumn name="formonly.sqlerrmsg" colName="sqlerrmsg" fieldId="14" sqlTabName="formonly" tabIndex="68">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <PhantomColumn name="formonly.sqlstate" colName="sqlstate" fieldId="15" sqlTabName="formonly" tabIndex="69">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <TableColumn name="formonly.exectime" colName="exectime" fieldId="16" sqlTabName="formonly" tabIndex="17" text="執行時間">
+          <Edit width="10" comment="Execution time">
+            <LStr comment="Execution time"/>
+          </Edit>
+          <LStr text="執行時間"/>
+        </TableColumn>
+        <TableColumn name="formonly.fglsq" colName="fglsq" fieldId="17" sqlTabName="formonly" tabIndex="18" text="SQL語句">
+          <Edit width="21" scroll="1"/>
+          <LStr text="SQL語句"/>
+        </TableColumn>
+        <PhantomColumn name="formonly.natsql1" colName="natsql1" fieldId="18" sqlTabName="formonly" tabIndex="70">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <PhantomColumn name="formonly.natsql2" colName="natsql2" fieldId="19" sqlTabName="formonly" tabIndex="71">
+          <PhantomEdit width="1"/>
+        </PhantomColumn>
+        <TableColumn name="formonly.timestamp" colName="timestamp" fieldId="20" sqlTabName="formonly" tabIndex="21" text="時間戳">
+          <Edit width="25" comment="Timestamp">
+            <LStr comment="Timestamp"/>
+          </Edit>
+          <LStr text="時間戳"/>
+        </TableColumn>
+      </Table>
+      <Group name="group1" text="SQL 語句" style="collapsible" posY="10" posX="1" gridWidth="93" gridHeight="12">
+        <LStr text="SQL 語句"/>
+        <FormField name="formonly.curr_sql1" colName="curr_sql1" fieldId="21" sqlTabName="formonly" tabIndex="22">
+          <TextEdit width="53" height="3" stretch="x" comment="SQL statement in program" wantReturns="1" scroll="1" posY="1" posX="1" gridWidth="53" gridHeight="3">
+            <LStr comment="SQL statement in program"/>
+          </TextEdit>
+        </FormField>
+        <HBox splitter="1" posY="4" posX="1" gridWidth="53" gridHeight="3">
+          <FormField name="formonly.curr_sql2" colName="curr_sql2" fieldId="22" sqlTabName="formonly" tabIndex="23">
+            <TextEdit width="28" height="3" stretch="x" comment="Database Native SQL statement" wantReturns="1" scroll="1">
+              <LStr comment="Database Native SQL statement"/>
+            </TextEdit>
+          </FormField>
+          <FormField name="formonly.curr_sql3" colName="curr_sql3" fieldId="26" sqlTabName="formonly" tabIndex="24">
+            <TextEdit width="24" height="3" stretch="x" comment="Database Native SQL statement (2)" wantReturns="1" scroll="1">
+              <LStr comment="Database Native SQL statement (2)"/>
+            </TextEdit>
+          </FormField>
+        </HBox>
+        <Label name="label4" width="8" text="時間戳:" comment="Timestamp" posY="1" posX="56" gridWidth="8">
+          <LStr text="時間戳:" comment="Timestamp"/>
+        </Label>
+        <FormField name="formonly.f_timestamp" colName="f_timestamp" fieldId="23" sqlTabName="formonly" tabIndex="25">
+          <Edit width="26" color="blue" posY="1" posX="65" gridWidth="26"/>
+        </FormField>
+        <Label name="label5" width="13" text="SQLCA.SQLCODE" posY="2" posX="56" gridWidth="13">
+          <LStr text="SQLCA.SQLCODE"/>
+        </Label>
+        <FormField name="formonly.f_sqlcode" colName="f_sqlcode" fieldId="24" sqlTabName="formonly" tabIndex="26">
+          <Edit width="20" colorCondition="%V%d0%&lt;%C3" posY="2" posX="71" gridWidth="20"/>
+        </FormField>
+        <Label name="label6" width="13" text="SQLSTATE" posY="3" posX="56" gridWidth="13">
+          <LStr text="SQLSTATE"/>
+        </Label>
+        <FormField name="formonly.f_sqlstate" colName="f_sqlstate" fieldId="25" sqlTabName="formonly" tabIndex="27">
+          <Edit width="20" color="cyan" posY="3" posX="71" gridWidth="20"/>
+        </FormField>
+        <Label name="label10" width="14" text="SQLCA.SQLERRD(2)" posY="4" posX="56" gridWidth="14">
+          <LStr text="SQLCA.SQLERRD(2)"/>
+        </Label>
+        <FormField name="formonly.f_sqlerrd2" colName="f_sqlerrd2" fieldId="27" sqlTabName="formonly" tabIndex="28">
+          <Edit width="20" color="yellow" posY="4" posX="71" gridWidth="20"/>
+        </FormField>
+        <Label name="label7" width="14" text="SQLCA.SQLERRD(3)" posY="5" posX="56" gridWidth="14">
+          <LStr text="SQLCA.SQLERRD(3)"/>
+        </Label>
+        <FormField name="formonly.f_sqlerrd3" colName="f_sqlerrd3" fieldId="28" sqlTabName="formonly" tabIndex="29">
+          <Edit width="20" color="blue" posY="5" posX="71" gridWidth="20"/>
+        </FormField>
+        <Label name="label8" width="3" text="原始碼:" posY="6" posX="56" gridWidth="3">
+          <LStr text="原始碼:"/>
+        </Label>
+        <FormField name="formonly.f_srcfile" colName="f_srcfile" fieldId="29" sqlTabName="formonly" tabIndex="30">
+          <Edit width="22" sizePolicy="dynamic" posY="6" posX="60" gridWidth="22"/>
+        </FormField>
+        <Label name="label9" width="3" text="行:" posY="6" posX="83" gridWidth="3">
+          <LStr text="行:"/>
+        </Label>
+        <FormField name="formonly.f_srcline" colName="f_srcline" sqlType="INTEGER" fieldId="30" sqlTabName="formonly" tabIndex="31">
+          <Edit width="4" posY="6" posX="87" gridWidth="4"/>
+        </FormField>
+        <Label name="label2" width="10" text="SQLCA.SQLERRM:" posY="7" posX="1" gridWidth="10">
+          <LStr text="SQLCA.SQLERRM:"/>
+        </Label>
+        <FormField name="formonly.f_sqlerrm" colName="f_sqlerrm" fieldId="31" sqlTabName="formonly" tabIndex="32">
+          <Edit width="90" color="red" scroll="1" posY="8" posX="1" gridWidth="90"/>
+        </FormField>
+        <Label name="label3" width="10" text="SQLERRMESSAGE:" posY="9" posX="1" gridWidth="10">
+          <LStr text="SQLERRMESSAGE:"/>
+        </Label>
+        <FormField name="formonly.f_sqlerrmsg" colName="f_sqlerrmsg" fieldId="32" sqlTabName="formonly" tabIndex="33">
+          <Edit width="90" color="red" scroll="1" posY="10" posX="1" gridWidth="90"/>
+        </FormField>
+      </Group>
+      <Group name="group3" text="過濾器" style="collapsible" posY="23" posX="1" gridWidth="92" gridHeight="7">
+        <LStr text="過濾器"/>
+        <Label name="label11" width="7" text="原始碼:" posY="1" posX="1" gridWidth="7">
+          <LStr text="原始碼:"/>
+        </Label>
+        <FormField name="formonly.current_source" colName="current_source" fieldId="33" sqlTabName="formonly" tabIndex="46">
+          <ComboBox width="47" posY="1" posX="10" gridWidth="49"/>
+        </FormField>
+        <FormField name="formonly.only_errors" colName="only_errors" fieldId="34" sqlTabName="formonly" tabIndex="47" notNull="1" required="1">
+          <CheckBox width="13" text="僅錯誤數據" posY="1" posX="61" gridWidth="13">
+            <LStr text="僅錯誤數據"/>
+          </CheckBox>
+        </FormField>
+        <Label name="label12" width="7" text="Cursor:" posY="2" posX="1" gridWidth="7">
+          <LStr text="Cursor:"/>
+        </Label>
+        <FormField name="formonly.current_cursor" colName="current_cursor" fieldId="35" sqlTabName="formonly" tabIndex="48">
+          <ComboBox width="25" posY="2" posX="10" gridWidth="27"/>
+        </FormField>
+        <FormField name="formonly.with_uvars" colName="with_uvars" fieldId="36" sqlTabName="formonly" tabIndex="49" notNull="1" required="1">
+          <CheckBox width="13" text="With USING" posY="2" posX="61" gridWidth="13">
+            <LStr text="With USING"/>
+          </CheckBox>
+        </FormField>
+        <FormField name="formonly.with_ivars" colName="with_ivars" fieldId="37" sqlTabName="formonly" tabIndex="50" notNull="1" required="1">
+          <CheckBox width="13" text="With INTO" posY="2" posX="76" gridWidth="13">
+            <LStr text="With INTO"/>
+          </CheckBox>
+        </FormField>
+        <Label name="label13" width="7" text="時間 &gt;=" posY="3" posX="1" gridWidth="7">
+          <LStr text="時間 &gt;="/>
+        </Label>
+        <FormField name="formonly.exec_time" colName="exec_time" fieldId="38" sqlTabName="formonly" tabIndex="51">
+          <Edit width="15" comment="Seconds" posY="3" posX="10" gridWidth="15">
+            <LStr comment="Seconds"/>
+          </Edit>
+        </FormField>
+        <Label text="." posY="3" posX="26" gridWidth="1"/>
+        <FormField name="formonly.exec_time_frac" colName="exec_time_frac" fieldId="39" sqlTabName="formonly" tabIndex="52">
+          <Edit width="5" format="&amp;&amp;&amp;&amp;&amp;" comment="Fraction of seconds" posY="3" posX="28" gridWidth="5">
+            <LStr comment="Fraction of seconds"/>
+          </Edit>
+        </FormField>
+        <FormField name="formonly.cursor_scroll" colName="cursor_scroll" fieldId="40" sqlTabName="formonly" tabIndex="53">
+          <CheckBox width="13" text="Scroll cursor" valueChecked="Y" valueUnchecked="N" posY="3" posX="61" gridWidth="13">
+            <LStr text="Scroll cursor"/>
+          </CheckBox>
+        </FormField>
+        <FormField name="formonly.cursor_hold" colName="cursor_hold" fieldId="41" sqlTabName="formonly" tabIndex="54">
+          <CheckBox width="13" text="Hold cursor" valueChecked="Y" valueUnchecked="N" posY="3" posX="76" gridWidth="13">
+            <LStr text="Hold cursor"/>
+          </CheckBox>
+        </FormField>
+        <Label name="label14" width="8" text="SQL 語句含有:" posY="4" posX="1" gridWidth="8">
+          <LStr text="SQL 語句含有:"/>
+        </Label>
+        <FormField name="formonly.find_keyword" colName="find_keyword" fieldId="42" sqlTabName="formonly" tabIndex="55">
+          <Edit width="80" scroll="1" posY="4" posX="10" gridWidth="80"/>
+        </FormField>
+        <Label name="label15" width="14" text="SQLCA.SQLCODE=" posY="5" posX="1" gridWidth="14">
+          <LStr text="SQLCA.SQLCODE="/>
+        </Label>
+        <FormField name="formonly.sql_code" colName="sql_code" fieldId="43" sqlTabName="formonly" tabIndex="56">
+          <Edit width="10" posY="5" posX="16" gridWidth="10"/>
+        </FormField>
+        <Label name="label16" width="17" text="SQLCA.SQLERRD(2)=" posY="5" posX="28" gridWidth="17">
+          <LStr text="SQLCA.SQLERRD(2)="/>
+        </Label>
+        <FormField name="formonly.sqlerrd_2" colName="sqlerrd_2" fieldId="44" sqlTabName="formonly" tabIndex="57">
+          <Edit width="9" posY="5" posX="46" gridWidth="9"/>
+        </FormField>
+        <Label name="label17" width="18" text="SQLCA.SQLERRD(3)&gt;=" posY="5" posX="57" gridWidth="18">
+          <LStr text="SQLCA.SQLERRD(3)&gt;="/>
+        </Label>
+        <FormField name="formonly.sqlerrd_3" colName="sqlerrd_3" fieldId="45" sqlTabName="formonly" tabIndex="58">
+          <Edit width="14" posY="5" posX="76" gridWidth="14"/>
+        </FormField>
+      </Group>
+    </Grid>
+    <Folder name="folder1">
+      <Page name="page1" text="USING &amp; INTO 參數傳遞">
+        <LStr text="USING &amp; INTO 參數傳遞"/>
+        <HBox name="hbox1" splitter="1">
+          <Table pageSize="4" name="table2" unsortableColumns="1" unmovableColumns="1" unhidableColumns="1" width="46" tabName="sruv">
+            <PhantomColumn name="formonly.cid_u" colName="cid_u" fieldId="46" sqlTabName="formonly" tabIndex="72">
+              <PhantomEdit width="1"/>
+            </PhantomColumn>
+            <PhantomColumn name="formonly.vtp_u" colName="vtp_u" fieldId="47" sqlTabName="formonly" tabIndex="73">
+              <PhantomEdit width="1"/>
+            </PhantomColumn>
+            <TableColumn name="formonly.pos_u" colName="pos_u" fieldId="48" sqlTabName="formonly" tabIndex="36" text="索引">
+              <Edit width="4"/>
+              <LStr text="索引"/>
+            </TableColumn>
+            <TableColumn name="formonly.typ_u" colName="typ_u" fieldId="49" sqlTabName="formonly" tabIndex="37" text="參數類型">
+              <Edit width="17" scroll="1"/>
+              <LStr text="參數類型"/>
+            </TableColumn>
+            <PhantomColumn name="formonly.flg_u" colName="flg_u" fieldId="50" sqlTabName="formonly" tabIndex="74">
+              <PhantomEdit width="1"/>
+            </PhantomColumn>
+            <TableColumn name="formonly.val_u" colName="val_u" fieldId="51" sqlTabName="formonly" tabIndex="39" text="參數值">
+              <Edit width="21" scroll="1"/>
+              <LStr text="參數值"/>
+            </TableColumn>
+          </Table>
+          <Table pageSize="4" name="table3" unsortableColumns="1" unmovableColumns="1" unhidableColumns="1" width="44" tabName="sriv">
+            <PhantomColumn name="formonly.cid_i" colName="cid_i" fieldId="52" sqlTabName="formonly" tabIndex="75">
+              <PhantomEdit width="1"/>
+            </PhantomColumn>
+            <PhantomColumn name="formonly.vtp_i" colName="vtp_i" fieldId="53" sqlTabName="formonly" tabIndex="76">
+              <PhantomEdit width="1"/>
+            </PhantomColumn>
+            <TableColumn name="formonly.pos_i" colName="pos_i" fieldId="54" sqlTabName="formonly" tabIndex="42" text="索引">
+              <Edit width="4"/>
+              <LStr text="索引"/>
+            </TableColumn>
+            <TableColumn name="formonly.typ_i" colName="typ_i" fieldId="55" sqlTabName="formonly" tabIndex="43" text="參數類型">
+              <Edit width="17" scroll="1"/>
+              <LStr text="參數類型"/>
+            </TableColumn>
+            <PhantomColumn name="formonly.flg_i" colName="flg_i" fieldId="56" sqlTabName="formonly" tabIndex="77">
+              <PhantomEdit width="1"/>
+            </PhantomColumn>
+            <TableColumn name="formonly.val_i" colName="val_i" fieldId="57" sqlTabName="formonly" tabIndex="45" text="參數值">
+              <Edit width="21" scroll="1"/>
+              <LStr text="參數值"/>
+            </TableColumn>
+          </Table>
+        </HBox>
+      </Page>
+    </Folder>
+  </VBox>
+  <RecordView tabName="formonly">
+    <Link colName="filename" fieldIdRef="0"/>
+    <Link colName="cmdid" fieldIdRef="1"/>
+    <Link colName="connid" fieldIdRef="2"/>
+    <Link colName="fglcmd" fieldIdRef="3"/>
+    <Link colName="srcfile" fieldIdRef="4"/>
+    <Link colName="srcline" fieldIdRef="5"/>
+    <Link colName="fglcursor" fieldIdRef="6"/>
+    <Link colName="sqlcursor" fieldIdRef="7"/>
+    <Link colName="c_scroll" fieldIdRef="8"/>
+    <Link colName="c_hold" fieldIdRef="9"/>
+    <Link colName="sqlcode" fieldIdRef="10"/>
+    <Link colName="sqlerrd2" fieldIdRef="11"/>
+    <Link colName="sqlerrd3" fieldIdRef="12"/>
+    <Link colName="sqlerrm" fieldIdRef="13"/>
+    <Link colName="sqlerrmsg" fieldIdRef="14"/>
+    <Link colName="sqlstate" fieldIdRef="15"/>
+    <Link colName="exectime" fieldIdRef="16"/>
+    <Link colName="fglsq" fieldIdRef="17"/>
+    <Link colName="natsql1" fieldIdRef="18"/>
+    <Link colName="natsql2" fieldIdRef="19"/>
+    <Link colName="timestamp" fieldIdRef="20"/>
+    <Link colName="curr_sql1" fieldIdRef="21"/>
+    <Link colName="curr_sql2" fieldIdRef="22"/>
+    <Link colName="f_timestamp" fieldIdRef="23"/>
+    <Link colName="f_sqlcode" fieldIdRef="24"/>
+    <Link colName="f_sqlstate" fieldIdRef="25"/>
+    <Link colName="curr_sql3" fieldIdRef="26"/>
+    <Link colName="f_sqlerrd2" fieldIdRef="27"/>
+    <Link colName="f_sqlerrd3" fieldIdRef="28"/>
+    <Link colName="f_srcfile" fieldIdRef="29"/>
+    <Link colName="f_srcline" fieldIdRef="30"/>
+    <Link colName="f_sqlerrm" fieldIdRef="31"/>
+    <Link colName="f_sqlerrmsg" fieldIdRef="32"/>
+    <Link colName="current_source" fieldIdRef="33"/>
+    <Link colName="only_errors" fieldIdRef="34"/>
+    <Link colName="current_cursor" fieldIdRef="35"/>
+    <Link colName="with_uvars" fieldIdRef="36"/>
+    <Link colName="with_ivars" fieldIdRef="37"/>
+    <Link colName="exec_time" fieldIdRef="38"/>
+    <Link colName="exec_time_frac" fieldIdRef="39"/>
+    <Link colName="cursor_scroll" fieldIdRef="40"/>
+    <Link colName="cursor_hold" fieldIdRef="41"/>
+    <Link colName="find_keyword" fieldIdRef="42"/>
+    <Link colName="sql_code" fieldIdRef="43"/>
+    <Link colName="sqlerrd_2" fieldIdRef="44"/>
+    <Link colName="sqlerrd_3" fieldIdRef="45"/>
+    <Link colName="cid_u" fieldIdRef="46"/>
+    <Link colName="vtp_u" fieldIdRef="47"/>
+    <Link colName="pos_u" fieldIdRef="48"/>
+    <Link colName="typ_u" fieldIdRef="49"/>
+    <Link colName="flg_u" fieldIdRef="50"/>
+    <Link colName="val_u" fieldIdRef="51"/>
+    <Link colName="cid_i" fieldIdRef="52"/>
+    <Link colName="vtp_i" fieldIdRef="53"/>
+    <Link colName="pos_i" fieldIdRef="54"/>
+    <Link colName="typ_i" fieldIdRef="55"/>
+    <Link colName="flg_i" fieldIdRef="56"/>
+    <Link colName="val_i" fieldIdRef="57"/>
+  </RecordView>
+  <RecordView tabName="sr">
+    <Link colName="cmdid" fieldIdRef="1"/>
+    <Link colName="connid" fieldIdRef="2"/>
+    <Link colName="fglcmd" fieldIdRef="3"/>
+    <Link colName="srcfile" fieldIdRef="4"/>
+    <Link colName="srcline" fieldIdRef="5"/>
+    <Link colName="fglcursor" fieldIdRef="6"/>
+    <Link colName="sqlcursor" fieldIdRef="7"/>
+    <Link colName="c_scroll" fieldIdRef="8"/>
+    <Link colName="c_hold" fieldIdRef="9"/>
+    <Link colName="sqlcode" fieldIdRef="10"/>
+    <Link colName="sqlerrd2" fieldIdRef="11"/>
+    <Link colName="sqlerrd3" fieldIdRef="12"/>
+    <Link colName="sqlerrm" fieldIdRef="13"/>
+    <Link colName="sqlerrmsg" fieldIdRef="14"/>
+    <Link colName="sqlstate" fieldIdRef="15"/>
+    <Link colName="fglsq" fieldIdRef="17"/>
+    <Link colName="natsql1" fieldIdRef="18"/>
+    <Link colName="natsql2" fieldIdRef="19"/>
+    <Link colName="timestamp" fieldIdRef="20"/>
+    <Link colName="exectime" fieldIdRef="16"/>
+  </RecordView>
+  <RecordView tabName="undefined">
+    <Link colName="filename" fieldIdRef="0"/>
+    <Link colName="curr_sql1" fieldIdRef="21"/>
+    <Link colName="curr_sql2" fieldIdRef="22"/>
+    <Link colName="curr_sql3" fieldIdRef="26"/>
+    <Link colName="f_timestamp" fieldIdRef="23"/>
+    <Link colName="f_sqlcode" fieldIdRef="24"/>
+    <Link colName="f_sqlstate" fieldIdRef="25"/>
+    <Link colName="f_sqlerrd2" fieldIdRef="27"/>
+    <Link colName="f_sqlerrd3" fieldIdRef="28"/>
+    <Link colName="f_srcfile" fieldIdRef="29"/>
+    <Link colName="f_srcline" fieldIdRef="30"/>
+    <Link colName="f_sqlerrm" fieldIdRef="31"/>
+    <Link colName="f_sqlerrmsg" fieldIdRef="32"/>
+    <Link colName="current_source" fieldIdRef="33"/>
+    <Link colName="only_errors" fieldIdRef="34"/>
+    <Link colName="current_cursor" fieldIdRef="35"/>
+    <Link colName="with_uvars" fieldIdRef="36"/>
+    <Link colName="with_ivars" fieldIdRef="37"/>
+    <Link colName="exec_time" fieldIdRef="38"/>
+    <Link colName="exec_time_frac" fieldIdRef="39"/>
+    <Link colName="cursor_scroll" fieldIdRef="40"/>
+    <Link colName="cursor_hold" fieldIdRef="41"/>
+    <Link colName="find_keyword" fieldIdRef="42"/>
+    <Link colName="sql_code" fieldIdRef="43"/>
+    <Link colName="sqlerrd_2" fieldIdRef="44"/>
+    <Link colName="sqlerrd_3" fieldIdRef="45"/>
+  </RecordView>
+</Form>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm gstVersion="22800" name="ManagedForm" uid="{dda39186-0000-4000-bf7d-f4888ed9adf1}">
+  <AGSettings/>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="sr" order="" uid="{baacee48-0000-4000-8fed-0be2ff3add46}" where="">
+    <RecordField colName="line" fieldIdRef="0" name="line" sqlTabName="formonly" table_alias_name="" uid="{29cd4846-0000-4000-9318-206c06742a95}"/>
+    <RecordField colName="text" fieldIdRef="1" name="text" sqlTabName="formonly" table_alias_name="" uid="{c8e03c70-0000-4000-b423-ae4ff65ef538}"/>
+  </Record>
+  <Form gridHeight="31" gridWidth="101" name="showtext" text="程式碼瀏覽">
+    <Grid gridHeight="31" gridWidth="101" name="Grid1" posX="0" posY="0">
+      <Table gridHeight="31" gridWidth="100" name="t1" posX="1" posY="0" totalRows="30" unhidableColumns="true" unmovableColumns="true" unsortableColumns="true">
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="line" color="red" columnCount="" fieldId="0" gridHeight="1" gridWidth="5" name="line" posX="0" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="1" table_alias_name="" title="行號" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="text" columnCount="" fieldId="1" gridHeight="1" gridWidth="92" name="text" posX="5" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="2" table_alias_name="" title="內文" widget="Edit"/>
+      </Table>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewBiAGEAYQBjAGUAZQA0ADgALQAwADAAMAAwAC0ANAAwADAAMAAtADgAZgBlAGQALQAwAGIAZQAyAGYAZgAzAGEAZABkADQANgB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEwAewAyADkAYwBkADQAOAA0ADYALQAwADAAMAAwAC0ANAAwADAAMAAtADkAMwAxADgALQAyADAANgBjADAANgA3ADQAMgBhADkANQB9QBbbbcgAAABAOkkkpgAAAAAAAAAAAAAAAQAAAEwAewBjADgAZQAwADMAYwA3ADAALQAwADAAMAAwAC0ANAAwADAAMAAtAGIANAAyADMALQBhAGUANABmAGYANgA1AGUAZgA1ADMAOAB9QBbbbcgAAABARgAAEIAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>

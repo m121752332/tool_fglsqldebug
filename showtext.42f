@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form name="showtext.tmp" build="2.40.04-2081.15" text="程式碼瀏覽" width="101" height="31">
+  <LStr text="程式碼瀏覽"/>
+  <Grid name="grid1" width="101" height="31">
+    <Table pageSize="30" name="t1" unsortableColumns="1" unmovableColumns="1" unhidableColumns="1" width="100" posY="0" posX="1" gridWidth="100" gridHeight="31" tabName="sr">
+      <TableColumn name="formonly.line" colName="line" fieldId="0" sqlTabName="formonly" tabIndex="1" text="行號">
+        <Edit width="5" color="red"/>
+        <LStr text="行號"/>
+      </TableColumn>
+      <TableColumn name="formonly.text" colName="text" fieldId="1" sqlTabName="formonly" tabIndex="2" text="內文">
+        <Edit width="92" scroll="1"/>
+        <LStr text="內文"/>
+      </TableColumn>
+    </Table>
+  </Grid>
+  <RecordView tabName="formonly">
+    <Link colName="line" fieldIdRef="0"/>
+    <Link colName="text" fieldIdRef="1"/>
+  </RecordView>
+</Form>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm gstVersion="22800" name="ManagedForm" uid="{3faefaa6-0000-4000-9967-f3a5e3308339}">
+  <AGSettings/>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="sr" order="" uid="{632a2131-0000-4000-b5a9-f7a9d34b9179}" where="">
+    <RecordField colName="cmdid" fieldIdRef="1" name="cmdid" sqlTabName="formonly" table_alias_name="" uid="{58fcf8e6-0000-4000-8046-dab3011f9fa5}"/>
+    <RecordField colName="connid" fieldIdRef="2" name="connid" sqlTabName="formonly" table_alias_name="" uid="{b46dc280-0000-4000-89b9-e88762547fd8}"/>
+    <RecordField colName="fglcmd" fieldIdRef="3" name="fglcmd" sqlTabName="formonly" table_alias_name="" uid="{64bdc67e-0000-4000-9c8e-6b86ab930729}"/>
+    <RecordField colName="srcfile" fieldIdRef="4" name="srcfile" sqlTabName="formonly" table_alias_name="" uid="{3549451c-0000-4000-8549-b6ab517600aa}"/>
+    <RecordField colName="srcline" fieldIdRef="5" name="srcline" sqlTabName="formonly" table_alias_name="" uid="{4d678656-0000-4000-936a-179088a7456a}"/>
+    <RecordField colName="fglcursor" fieldIdRef="6" name="fglcursor" sqlTabName="formonly" table_alias_name="" uid="{b05acdeb-0000-4000-9173-d8e746c8a574}"/>
+    <RecordField colName="sqlcursor" fieldIdRef="7" name="sqlcursor" sqlTabName="formonly" table_alias_name="" uid="{3d805b57-0000-4000-8dee-5d033f7fd2cf}"/>
+    <RecordField colName="c_scroll" fieldIdRef="8" name="c_scroll" sqlTabName="formonly" table_alias_name="" uid="{301071d7-0000-4000-945a-e74eea6cd07e}"/>
+    <RecordField colName="c_hold" fieldIdRef="9" name="c_hold" sqlTabName="formonly" table_alias_name="" uid="{1f8e5869-0000-4000-b23c-cf527a3b4700}"/>
+    <RecordField colName="sqlcode" fieldIdRef="10" name="sqlcode" sqlTabName="formonly" table_alias_name="" uid="{ff1855c8-0000-4000-b61d-5b33e58611cf}"/>
+    <RecordField colName="sqlerrd2" fieldIdRef="11" name="sqlerrd2" sqlTabName="formonly" table_alias_name="" uid="{1e07ac72-0000-4000-ab7d-dbb0dff41ce2}"/>
+    <RecordField colName="sqlerrd3" fieldIdRef="12" name="sqlerrd3" sqlTabName="formonly" table_alias_name="" uid="{27b09ea5-0000-4000-a0df-9ba7de30faab}"/>
+    <RecordField colName="sqlerrm" fieldIdRef="13" name="sqlerrm" sqlTabName="formonly" table_alias_name="" uid="{2362725d-0000-4000-a0cb-f20f18d4bc9b}"/>
+    <RecordField colName="sqlerrmsg" fieldIdRef="14" name="sqlerrmsg" sqlTabName="formonly" table_alias_name="" uid="{f4876556-0000-4000-b9bd-417e7f8dfb1b}"/>
+    <RecordField colName="sqlstate" fieldIdRef="15" name="sqlstate" sqlTabName="formonly" table_alias_name="" uid="{5a44c10f-0000-4000-b843-b5a2cbf9af93}"/>
+    <RecordField colName="fglsq" fieldIdRef="16" name="fglsq" sqlTabName="formonly" table_alias_name="" uid="{700acec4-0000-4000-aad4-c4496fbf86e5}"/>
+    <RecordField colName="natsql1" fieldIdRef="17" name="natsql1" sqlTabName="formonly" table_alias_name="" uid="{2d04cb72-0000-4000-9b07-a3dba17e6ff0}"/>
+    <RecordField colName="natsql2" fieldIdRef="18" name="natsql2" sqlTabName="formonly" table_alias_name="" uid="{e4a8f7d7-0000-4000-9a4e-addc56e12c8f}"/>
+    <RecordField colName="timestamp" fieldIdRef="19" name="timestamp" sqlTabName="formonly" table_alias_name="" uid="{46389c6e-0000-4000-b237-2c6d42879418}"/>
+    <RecordField colName="exectime" fieldIdRef="20" name="exectime" sqlTabName="formonly" table_alias_name="" uid="{dd000175-0000-4000-b140-63c9db156fdf}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="sruv" order="" uid="{7010b27d-0000-4000-86d1-76cfc09aa17b}" where="">
+    <RecordField colName="cid_u" fieldIdRef="33" name="cid_u" sqlTabName="formonly" table_alias_name="" uid="{906666ea-0000-4000-a4f6-c049563088b2}"/>
+    <RecordField colName="vtp_u" fieldIdRef="34" name="vtp_u" sqlTabName="formonly" table_alias_name="" uid="{b3303cb3-0000-4000-943b-cf898cc93b3f}"/>
+    <RecordField colName="pos_u" fieldIdRef="35" name="pos_u" sqlTabName="formonly" table_alias_name="" uid="{a39e0889-0000-4000-98d0-9ee2a87fbedc}"/>
+    <RecordField colName="typ_u" fieldIdRef="36" name="typ_u" sqlTabName="formonly" table_alias_name="" uid="{6a525059-0000-4000-b1ad-1e11d09ccded}"/>
+    <RecordField colName="flg_u" fieldIdRef="37" name="flg_u" sqlTabName="formonly" table_alias_name="" uid="{35f439ce-0000-4000-9a61-012485a2d324}"/>
+    <RecordField colName="val_u" fieldIdRef="38" name="val_u" sqlTabName="formonly" table_alias_name="" uid="{42c1acce-0000-4000-8b35-df6324342aac}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="sriv" order="" uid="{42d135f8-0000-4000-b722-98ba6439accd}" where="">
+    <RecordField colName="cid_i" fieldIdRef="39" name="cid_i" sqlTabName="formonly" table_alias_name="" uid="{c5d4192c-0000-4000-8dcf-351cdab8171b}"/>
+    <RecordField colName="vtp_i" fieldIdRef="40" name="vtp_i" sqlTabName="formonly" table_alias_name="" uid="{a1784003-0000-4000-bb99-6d6e77f2ff15}"/>
+    <RecordField colName="pos_i" fieldIdRef="41" name="pos_i" sqlTabName="formonly" table_alias_name="" uid="{d8ea5453-0000-4000-a786-a2f0094e8fd7}"/>
+    <RecordField colName="typ_i" fieldIdRef="42" name="typ_i" sqlTabName="formonly" table_alias_name="" uid="{0537a2ac-0000-4000-b449-f7a3b669a938}"/>
+    <RecordField colName="flg_i" fieldIdRef="43" name="flg_i" sqlTabName="formonly" table_alias_name="" uid="{bd3028de-0000-4000-8355-503384102d7a}"/>
+    <RecordField colName="val_i" fieldIdRef="44" name="val_i" sqlTabName="formonly" table_alias_name="" uid="{7d689871-0000-4000-b0bf-75dbd444766c}"/>
+  </Record>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="Undefined" order="" uid="{901c552a-0000-4000-9049-a552e22ed097}" where="">
+    <RecordField colName="filename" fieldIdRef="0" name="filename" sqlTabName="formonly" table_alias_name="" uid="{f55f6f8d-0000-4000-ba72-3431472b47e4}"/>
+    <RecordField colName="curr_sql1" fieldIdRef="30" name="curr_sql1" sqlTabName="formonly" table_alias_name="" uid="{4ae0a356-0000-4000-bb60-f25878c56a41}"/>
+    <RecordField colName="curr_sql2" fieldIdRef="31" name="curr_sql2" sqlTabName="formonly" table_alias_name="" uid="{344b65fe-0000-4000-a0ee-89dd44badf4e}"/>
+    <RecordField colName="curr_sql3" fieldIdRef="32" name="curr_sql3" sqlTabName="formonly" table_alias_name="" uid="{c2d9d13d-0000-4000-b0a0-736c59faa183}"/>
+    <RecordField colName="f_timestamp" fieldIdRef="21" name="f_timestamp" sqlTabName="formonly" table_alias_name="" uid="{5d96bd82-0000-4000-aeb6-d734c09cf656}"/>
+    <RecordField colName="f_sqlcode" fieldIdRef="22" name="f_sqlcode" sqlTabName="formonly" table_alias_name="" uid="{a95fa47c-0000-4000-9c12-80cf5cf16d67}"/>
+    <RecordField colName="f_sqlstate" fieldIdRef="23" name="f_sqlstate" sqlTabName="formonly" table_alias_name="" uid="{f096bf95-0000-4000-b34d-4a276f7375a3}"/>
+    <RecordField colName="f_sqlerrd2" fieldIdRef="24" name="f_sqlerrd2" sqlTabName="formonly" table_alias_name="" uid="{0ba4e671-0000-4000-acb2-89e015d079f1}"/>
+    <RecordField colName="f_sqlerrd3" fieldIdRef="25" name="f_sqlerrd3" sqlTabName="formonly" table_alias_name="" uid="{c89ba973-0000-4000-bb36-59c1c7e03857}"/>
+    <RecordField colName="f_srcfile" fieldIdRef="26" name="f_srcfile" sqlTabName="formonly" table_alias_name="" uid="{d3175039-0000-4000-8e86-ad19d9b99322}"/>
+    <RecordField colName="f_srcline" fieldIdRef="27" name="f_srcline" sqlTabName="formonly" sqlType="INTEGER" table_alias_name="" uid="{9cd0c81b-0000-4000-92f4-26abfd8cf090}"/>
+    <RecordField colName="f_sqlerrm" fieldIdRef="28" name="f_sqlerrm" sqlTabName="formonly" table_alias_name="" uid="{c50fb2b0-0000-4000-ae91-4391bed3ac77}"/>
+    <RecordField colName="f_sqlerrmsg" fieldIdRef="29" name="f_sqlerrmsg" sqlTabName="formonly" table_alias_name="" uid="{00bc5849-0000-4000-8611-2129051e9f6b}"/>
+    <RecordField colName="current_source" fieldIdRef="46" name="current_source" sqlTabName="formonly" table_alias_name="" uid="{82b1c674-0000-4000-badd-be79973c79e9}"/>
+    <RecordField colName="only_errors" fieldIdRef="49" name="only_errors" sqlTabName="formonly" table_alias_name="" uid="{638fa67a-0000-4000-a40f-a01b952fdafd}"/>
+    <RecordField colName="current_cursor" fieldIdRef="45" name="current_cursor" sqlTabName="formonly" table_alias_name="" uid="{897c57e1-0000-4000-9d68-5da1fb1ce0ec}"/>
+    <RecordField colName="with_uvars" fieldIdRef="50" name="with_uvars" sqlTabName="formonly" table_alias_name="" uid="{1086eaeb-0000-4000-b96f-e7fe22678a5a}"/>
+    <RecordField colName="with_ivars" fieldIdRef="51" name="with_ivars" sqlTabName="formonly" table_alias_name="" uid="{32992316-0000-4000-873f-58f23f9b9b72}"/>
+    <RecordField colName="exec_time" fieldIdRef="47" name="exec_time" sqlTabName="formonly" table_alias_name="" uid="{af29719a-0000-4000-92b0-45ebe16f8b10}"/>
+    <RecordField colName="exec_time_frac" fieldIdRef="48" name="exec_time_frac" sqlTabName="formonly" table_alias_name="" uid="{b37cf3ed-0000-4000-a258-13f376d78867}"/>
+    <RecordField colName="cursor_scroll" fieldIdRef="52" name="cursor_scroll" sqlTabName="formonly" table_alias_name="" uid="{42997a42-0000-4000-bc66-0495c6e69baa}"/>
+    <RecordField colName="cursor_hold" fieldIdRef="53" name="cursor_hold" sqlTabName="formonly" table_alias_name="" uid="{9d478a06-0000-4000-9dc0-ed4577f37734}"/>
+    <RecordField colName="find_keyword" fieldIdRef="54" name="find_keyword" sqlTabName="formonly" table_alias_name="" uid="{aa244c62-0000-4000-8307-78cc88729d2f}"/>
+    <RecordField colName="sql_code" fieldIdRef="55" name="sql_code" sqlTabName="formonly" table_alias_name="" uid="{5d73a8bc-0000-4000-a579-11a9d6162cbe}"/>
+    <RecordField colName="sqlerrd_2" fieldIdRef="56" name="sqlerrd_2" sqlTabName="formonly" table_alias_name="" uid="{21422f35-0000-4000-b617-f07d99b73422}"/>
+    <RecordField colName="sqlerrd_3" fieldIdRef="57" name="sqlerrd_3" sqlTabName="formonly" table_alias_name="" uid="{bd47172c-0000-4000-a585-0377e8668b65}"/>
+  </Record>
+  <Form gridHeight="49" gridWidth="205" name="fglsqldebug" style="main2" text="FGLSQLDEBUG 資料庫語法除錯器">
+    <ActionDefaultList name="ActionDefaultList1">
+      <ActionDefault contextMenu="no" name="open" text="Open"/>
+      <ActionDefault contextMenu="no" name="source" text="Source"/>
+      <ActionDefault contextMenu="no" name="details" text="Details"/>
+      <ActionDefault acceleratorName="control-r" contextMenu="no" name="refresh" text="Refresh"/>
+      <ActionDefault contextMenu="no" name="f_errors" text="Errors"/>
+      <ActionDefault contextMenu="no" name="f_cursor" text="Cursor"/>
+      <ActionDefault contextMenu="no" name="f_source" text="Source"/>
+      <ActionDefault acceleratorName="control-p" contextMenu="no" name="prev_ident" text="Same prev"/>
+      <ActionDefault acceleratorName="control-n" contextMenu="no" name="next_ident" text="Same next"/>
+      <ActionDefault acceleratorName="control-w" contextMenu="no" name="stats_glob" text="Global Statistics"/>
+      <ActionDefault acceleratorName="control-y" contextMenu="no" name="stats_stmt" text="Statement Statistics"/>
+      <ActionDefault contextMenu="no" name="close" text="Close"/>
+      <ActionDefault contextMenu="no" name="about" text="About"/>
+    </ActionDefaultList>
+    <TopMenu name="TopMenu1">
+      <TopMenuGroup name="file" text="檔案">
+        <TopMenuCommand name="open" text="開啟"/>
+        <TopMenuCommand name="close" text="關閉"/>
+      </TopMenuGroup>
+      <TopMenuGroup name="view" text="檢視">
+        <TopMenuCommand name="details" text="資料庫反饋"/>
+        <TopMenuCommand name="source" text="程式碼"/>
+        <TopMenuCommand name="refresh" text="重新整理"/>
+      </TopMenuGroup>
+      <TopMenuGroup name="filter" text="過濾">
+        <TopMenuCommand name="f_errors" text="僅錯誤數據"/>
+        <TopMenuCommand name="f_cursor" text="相同指標"/>
+        <TopMenuCommand name="f_source" text="相同原始碼"/>
+      </TopMenuGroup>
+      <TopMenuGroup name="stats" text="資料分析">
+        <TopMenuCommand name="prev_ident" text="上一個相同"/>
+        <TopMenuCommand name="next_ident" text="下一個相同"/>
+        <TopMenuCommand name="stats_glob" text="全部統計"/>
+        <TopMenuCommand name="stats_stmt" text="語法統計"/>
+      </TopMenuGroup>
+      <TopMenuGroup name="help" text="幫助">
+        <TopMenuCommand name="about" text="關於"/>
+      </TopMenuGroup>
+    </TopMenu>
+    <VBox gridHeight="49" gridWidth="200" name="VBox1" posX="0" posY="0" splitter="true">
+      <Grid gridHeight="31" gridWidth="200" name="Grid1" posX="0" posY="1">
+        <Label gridHeight="1" gridWidth="17" name="Label1" posX="1" posY="0" text="FGLSQLDEBUG 工具  讀取LOG檔案位置:"/>
+        <ButtonEdit action="open" aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="filename" columnCount="" fieldId="0" gridHeight="1" gridWidth="72" image="file" name="filename" posX="20" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="1" table_alias_name="" widget="ButtonEdit"/>
+        <Table gridHeight="8" gridWidth="92" name="Table1" posX="1" posY="2" totalRows="6" unitWidth="characters" width="92">
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="cmdid" columnCount="" fieldId="1" gridHeight="1" gridWidth="6" name="cmdid" posX="0" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="2" table_alias_name="" title="排序" widget="Edit"/>
+          <Phantom colName="connid" fieldId="2" name="connid" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="fglcmd" columnCount="" fieldId="3" gridHeight="1" gridWidth="9" name="fglcmd" posX="6" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="4" table_alias_name="" title="指令" widget="Edit"/>
+          <Phantom colName="srcfile" fieldId="4" name="srcfile" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Phantom colName="srcline" fieldId="5" name="srcline" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="fglcursor" columnCount="" fieldId="6" gridHeight="1" gridWidth="7" name="fglcursor" posX="15" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="7" table_alias_name="" title="Cursor 指標" widget="Edit"/>
+          <Phantom colName="sqlcursor" fieldId="7" name="sqlcursor" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Phantom colName="c_scroll" fieldId="8" name="c_scroll" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Phantom colName="c_hold" fieldId="9" name="c_hold" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="sqlcode" columnCount="" fieldId="10" gridHeight="1" gridWidth="6" name="sqlcode" posX="22" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="11" table_alias_name="" title="sqlcode" widget="Edit"/>
+          <Phantom colName="sqlerrd2" fieldId="11" name="sqlerrd2" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Phantom colName="sqlerrd3" fieldId="12" name="sqlerrd3" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Phantom colName="sqlerrm" fieldId="13" name="sqlerrm" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Phantom colName="sqlerrmsg" fieldId="14" name="sqlerrmsg" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Phantom colName="sqlstate" fieldId="15" name="sqlstate" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="exectime" columnCount="" comment="Execution time" fieldId="20" gridHeight="1" gridWidth="10" name="exectime" posX="28" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="17" table_alias_name="" title="執行時間" widget="Edit"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="fglsq" columnCount="" fieldId="16" gridHeight="1" gridWidth="21" name="fglsq" posX="38" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="18" table_alias_name="" title="SQL語句" widget="Edit"/>
+          <Phantom colName="natsql1" fieldId="17" name="natsql1" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Phantom colName="natsql2" fieldId="18" name="natsql2" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="timestamp" columnCount="" comment="Timestamp" fieldId="19" gridHeight="1" gridWidth="25" name="timestamp" posX="59" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="21" table_alias_name="" title="時間戳" widget="Edit"/>
+        </Table>
+        <Group gridHeight="12" gridWidth="93" name="group1" posX="1" posY="10" style="collapsible" text="SQL 語句">
+          <TextEdit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="curr_sql1" columnCount="" comment="SQL statement in program" fieldId="30" gridHeight="3" gridWidth="53" name="curr_sql1" posX="1" posY="1" rowCount="" sqlTabName="formonly" stepX="" stepY="" stretch="x" tabIndex="22" table_alias_name="" wantNoReturns="false" widget="TextEdit"/>
+          <TextEdit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="curr_sql2" columnCount="" comment="Database Native SQL statement" fieldId="31" gridHeight="3" gridWidth="28" name="curr_sql2" posX="1" posY="4" rowCount="" sqlTabName="formonly" stepX="" stepY="" stretch="x" tabIndex="23" table_alias_name="" wantNoReturns="false" widget="TextEdit"/>
+          <Label comment="Timestamp" gridHeight="1" gridWidth="8" name="Label4" posX="56" posY="1" text="時間戳:"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="f_timestamp" color="blue" columnCount="" fieldId="21" gridHeight="1" gridWidth="26" name="f_timestamp" posX="65" posY="1" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="25" table_alias_name="" widget="Edit"/>
+          <Label gridHeight="1" gridWidth="13" name="Label5" posX="56" posY="2" text="SQLCA.SQLCODE"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="f_sqlcode" colorCondition="%V%d0%&lt;%C3" columnCount="" fieldId="22" gridHeight="1" gridWidth="20" name="f_sqlcode" posX="71" posY="2" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="26" table_alias_name="" widget="Edit"/>
+          <Label gridHeight="1" gridWidth="13" name="Label6" posX="56" posY="3" text="SQLSTATE"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="f_sqlstate" color="cyan" columnCount="" fieldId="23" gridHeight="1" gridWidth="20" name="f_sqlstate" posX="71" posY="3" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="27" table_alias_name="" widget="Edit"/>
+          <TextEdit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="curr_sql3" columnCount="" comment="Database Native SQL statement (2)" fieldId="32" gridHeight="3" gridWidth="24" name="curr_sql3" posX="30" posY="4" rowCount="" sqlTabName="formonly" stepX="" stepY="" stretch="x" tabIndex="24" table_alias_name="" wantNoReturns="false" widget="TextEdit"/>
+          <Label gridHeight="1" gridWidth="14" name="Label10" posX="56" posY="4" text="SQLCA.SQLERRD(2)"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="f_sqlerrd2" color="yellow" columnCount="" fieldId="24" gridHeight="1" gridWidth="20" name="f_sqlerrd2" posX="71" posY="4" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="28" table_alias_name="" widget="Edit"/>
+          <Label gridHeight="1" gridWidth="14" name="Label7" posX="56" posY="5" text="SQLCA.SQLERRD(3)"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="f_sqlerrd3" color="blue" columnCount="" fieldId="25" gridHeight="1" gridWidth="20" name="f_sqlerrd3" posX="71" posY="5" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="29" table_alias_name="" widget="Edit"/>
+          <Label gridHeight="1" gridWidth="3" name="Label8" posX="56" posY="6" text="原始碼:"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="f_srcfile" columnCount="" fieldId="26" gridHeight="1" gridWidth="22" name="f_srcfile" posX="60" posY="6" rowCount="" sizePolicy="dynamic" sqlTabName="formonly" stepX="" stepY="" tabIndex="30" table_alias_name="" widget="Edit"/>
+          <Label gridHeight="1" gridWidth="3" name="Label9" posX="83" posY="6" text="行:"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="f_srcline" columnCount="" fieldId="27" gridHeight="1" gridWidth="4" name="f_srcline" posX="87" posY="6" rowCount="" sqlTabName="formonly" sqlType="INTEGER" stepX="" stepY="" tabIndex="31" table_alias_name="" widget="Edit"/>
+          <Label gridHeight="1" gridWidth="10" name="Label2" posX="1" posY="7" text="SQLCA.SQLERRM:"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="f_sqlerrm" color="red" columnCount="" fieldId="28" gridHeight="1" gridWidth="90" name="f_sqlerrm" posX="1" posY="8" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="32" table_alias_name="" widget="Edit"/>
+          <Label gridHeight="1" gridWidth="10" name="Label3" posX="1" posY="9" text="SQLERRMESSAGE:"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="f_sqlerrmsg" color="red" columnCount="" fieldId="29" gridHeight="1" gridWidth="90" name="f_sqlerrmsg" posX="1" posY="10" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="33" table_alias_name="" widget="Edit"/>
+        </Group>
+        <Group gridHeight="7" gridWidth="92" name="group3" posX="1" posY="23" style="collapsible" text="過濾器">
+          <Label gridHeight="1" gridWidth="7" name="Label11" posX="1" posY="1" text="原始碼:"/>
+          <ComboBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="current_source" columnCount="" fieldId="46" gridHeight="1" gridWidth="49" items="" name="current_source" posX="10" posY="1" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="46" table_alias_name="" widget="ComboBox"/>
+          <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="only_errors" columnCount="" fieldId="49" gridHeight="1" gridWidth="13" name="only_errors" notNull="true" posX="61" posY="1" required="true" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="47" table_alias_name="" text="僅錯誤數據" widget="CheckBox"/>
+          <Label gridHeight="1" gridWidth="7" name="Label12" posX="1" posY="2" text="Cursor:"/>
+          <ComboBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="current_cursor" columnCount="" fieldId="45" gridHeight="1" gridWidth="27" items="" name="current_cursor" posX="10" posY="2" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="48" table_alias_name="" widget="ComboBox"/>
+          <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="with_uvars" columnCount="" fieldId="50" gridHeight="1" gridWidth="13" name="with_uvars" notNull="true" posX="61" posY="2" required="true" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="49" table_alias_name="" text="With USING" widget="CheckBox"/>
+          <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="with_ivars" columnCount="" fieldId="51" gridHeight="1" gridWidth="13" name="with_ivars" notNull="true" posX="76" posY="2" required="true" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="50" table_alias_name="" text="With INTO" widget="CheckBox"/>
+          <Label gridHeight="1" gridWidth="7" name="Label13" posX="1" posY="3" text="時間 &gt;="/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="exec_time" columnCount="" comment="Seconds" fieldId="47" gridHeight="1" gridWidth="15" name="exec_time" posX="10" posY="3" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="51" table_alias_name="" widget="Edit"/>
+          <Label posX="26" posY="3" text="."/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="exec_time_frac" columnCount="" comment="Fraction of seconds" fieldId="48" format="&amp;&amp;&amp;&amp;&amp;" gridHeight="1" gridWidth="5" name="exec_time_frac" posX="28" posY="3" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="52" table_alias_name="" widget="Edit"/>
+          <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="cursor_scroll" columnCount="" fieldId="52" gridHeight="1" gridWidth="13" name="cursor_scroll" posX="61" posY="3" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="53" table_alias_name="" text="Scroll cursor" valueChecked="Y" valueUnchecked="N" widget="CheckBox"/>
+          <CheckBox aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="cursor_hold" columnCount="" fieldId="53" gridHeight="1" gridWidth="13" name="cursor_hold" posX="76" posY="3" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="54" table_alias_name="" text="Hold cursor" valueChecked="Y" valueUnchecked="N" widget="CheckBox"/>
+          <Label gridHeight="1" gridWidth="8" name="Label14" posX="1" posY="4" text="SQL 語句含有:"/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="find_keyword" columnCount="" fieldId="54" gridHeight="1" gridWidth="80" name="find_keyword" posX="10" posY="4" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="55" table_alias_name="" widget="Edit"/>
+          <Label gridHeight="1" gridWidth="14" name="Label15" posX="1" posY="5" text="SQLCA.SQLCODE="/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="sql_code" columnCount="" fieldId="55" gridHeight="1" gridWidth="10" name="sql_code" posX="16" posY="5" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="56" table_alias_name="" widget="Edit"/>
+          <Label gridHeight="1" gridWidth="17" name="Label16" posX="28" posY="5" text="SQLCA.SQLERRD(2)="/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="sqlerrd_2" columnCount="" fieldId="56" gridHeight="1" gridWidth="9" name="sqlerrd_2" posX="46" posY="5" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="57" table_alias_name="" widget="Edit"/>
+          <Label gridHeight="1" gridWidth="18" name="Label17" posX="57" posY="5" text="SQLCA.SQLERRD(3)&gt;="/>
+          <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="sqlerrd_3" columnCount="" fieldId="57" gridHeight="1" gridWidth="14" name="sqlerrd_3" posX="76" posY="5" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="58" table_alias_name="" widget="Edit"/>
+        </Group>
+      </Grid>
+      <Folder gridHeight="16" gridWidth="200" name="Folder1" posX="0" posY="32">
+        <Page name="Page1" text="USING &amp; INTO 參數傳遞">
+          <HBox gridHeight="5" gridWidth="96" name="HBox1" posX="0" posY="0" splitter="true">
+            <Table gridHeight="5" gridWidth="46" name="table2" posX="2" posY="0" totalRows="4" unhidableColumns="true" unitWidth="characters" unmovableColumns="true" unsortableColumns="true" width="46">
+              <Phantom colName="cid_u" fieldId="33" name="cid_u" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+              <Phantom colName="vtp_u" fieldId="34" name="vtp_u" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+              <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="pos_u" columnCount="" fieldId="35" gridHeight="1" gridWidth="4" name="pos_u" posX="0" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="36" table_alias_name="" title="索引" widget="Edit"/>
+              <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="typ_u" columnCount="" fieldId="36" gridHeight="1" gridWidth="17" name="typ_u" posX="4" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="37" table_alias_name="" title="參數類型" widget="Edit"/>
+              <Phantom colName="flg_u" fieldId="37" name="flg_u" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+              <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="val_u" columnCount="" fieldId="38" gridHeight="1" gridWidth="21" name="val_u" posX="21" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="39" table_alias_name="" title="參數值" widget="Edit"/>
+            </Table>
+            <Table gridHeight="5" gridWidth="46" name="table3" posX="48" posY="0" totalRows="4" unhidableColumns="true" unitWidth="characters" unmovableColumns="true" unsortableColumns="true" width="44">
+              <Phantom colName="cid_i" fieldId="39" name="cid_i" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+              <Phantom colName="vtp_i" fieldId="40" name="vtp_i" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+              <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="pos_i" columnCount="" fieldId="41" gridHeight="1" gridWidth="4" name="pos_i" posX="0" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="42" table_alias_name="" title="索引" widget="Edit"/>
+              <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="typ_i" columnCount="" fieldId="42" gridHeight="1" gridWidth="17" name="typ_i" posX="4" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="43" table_alias_name="" title="參數類型" widget="Edit"/>
+              <Phantom colName="flg_i" fieldId="43" name="flg_i" sqlTabName="formonly" table_alias_name="" widget="Phantom"/>
+              <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="val_i" columnCount="" fieldId="44" gridHeight="1" gridWidth="21" name="val_i" posX="21" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="45" table_alias_name="" title="參數值" widget="Edit"/>
+            </Table>
+          </HBox>
+        </Page>
+      </Folder>
+    </VBox>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[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]]>
+  </DiagramLayout>
+</ManagedForm>

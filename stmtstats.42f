@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form name="stmtstats.tmp" build="2.40.04-2081.15" text="SQL Statement statistics" width="136" height="6">
+  <LStr text="SQL Statement statistics"/>
+  <Grid name="grid1" width="136" height="6">
+    <Table pageSize="5" name="table1" width="135" posY="0" posX="1" gridWidth="135" gridHeight="6" tabName="sr">
+      <TableColumn name="formonly.firstcmdid" colName="firstcmdid" fieldId="0" sqlTabName="formonly" tabIndex="1" text="Num">
+        <Edit width="7"/>
+        <LStr text="Num"/>
+      </TableColumn>
+      <TableColumn name="formonly.fglcmd" colName="fglcmd" fieldId="1" sqlTabName="formonly" tabIndex="2" text="Command">
+        <Edit width="15" scroll="1"/>
+        <LStr text="Command"/>
+      </TableColumn>
+      <TableColumn name="formonly.fglsql" colName="fglsql" fieldId="2" sqlTabName="formonly" tabIndex="3" text="SQL">
+        <Edit width="17" scroll="1"/>
+        <LStr text="SQL"/>
+      </TableColumn>
+      <TableColumn name="formonly.fglcursor" colName="fglcursor" fieldId="3" sqlTabName="formonly" tabIndex="4" text="Cursor">
+        <Edit width="6" scroll="1"/>
+        <LStr text="Cursor"/>
+      </TableColumn>
+      <TableColumn name="formonly.occurences" colName="occurences" fieldId="4" sqlTabName="formonly" tabIndex="5" text="Occurrences">
+        <Edit width="5"/>
+        <LStr text="Occurrences"/>
+      </TableColumn>
+      <TableColumn name="formonly.sqlerrors" colName="sqlerrors" fieldId="5" sqlTabName="formonly" tabIndex="6" text="SQL Errors">
+        <Edit width="5"/>
+        <LStr text="SQL Errors"/>
+      </TableColumn>
+      <TableColumn name="formonly.sqlnotfnd" colName="sqlnotfnd" fieldId="6" sqlTabName="formonly" tabIndex="7" text="Not Founds">
+        <Edit width="5"/>
+        <LStr text="Not Founds"/>
+      </TableColumn>
+      <TableColumn name="formonly.time_avg" colName="time_avg" fieldId="7" sqlTabName="formonly" tabIndex="8" text="Time AVG">
+        <Edit width="15"/>
+        <LStr text="Time AVG"/>
+      </TableColumn>
+      <TableColumn name="formonly.time_min" colName="time_min" fieldId="8" sqlTabName="formonly" tabIndex="9" text="Time MIN">
+        <Edit width="15"/>
+        <LStr text="Time MIN"/>
+      </TableColumn>
+      <TableColumn name="formonly.time_max" colName="time_max" fieldId="9" sqlTabName="formonly" tabIndex="10" text="Time MAX">
+        <Edit width="16"/>
+        <LStr text="Time MAX"/>
+      </TableColumn>
+      <TableColumn name="formonly.time_tot" colName="time_tot" fieldId="10" sqlTabName="formonly" tabIndex="11" text="Time TOT">
+        <Edit width="17"/>
+        <LStr text="Time TOT"/>
+      </TableColumn>
+    </Table>
+  </Grid>
+  <RecordView tabName="formonly">
+    <Link colName="firstcmdid" fieldIdRef="0"/>
+    <Link colName="fglcmd" fieldIdRef="1"/>
+    <Link colName="fglsql" fieldIdRef="2"/>
+    <Link colName="fglcursor" fieldIdRef="3"/>
+    <Link colName="occurences" fieldIdRef="4"/>
+    <Link colName="sqlerrors" fieldIdRef="5"/>
+    <Link colName="sqlnotfnd" fieldIdRef="6"/>
+    <Link colName="time_avg" fieldIdRef="7"/>
+    <Link colName="time_min" fieldIdRef="8"/>
+    <Link colName="time_max" fieldIdRef="9"/>
+    <Link colName="time_tot" fieldIdRef="10"/>
+  </RecordView>
+</Form>

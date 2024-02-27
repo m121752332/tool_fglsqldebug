@@ -1,0 +1,39 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/toptest/tiptop/ds4gl2/fglsqldeb/stmtstats.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"SQL Statement statistics")
+Grid Grid1
+{
+ <T table1                                                                                                                             >
+ [firstcm|fglcmd         |fglsql           |fglcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
+ [firstcm|fglcmd         |fglsql           |fglcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
+ [firstcm|fglcmd         |fglsql           |fglcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
+ [firstcm|fglcmd         |fglsql           |fglcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
+ [firstcm|fglcmd         |fglsql           |fglcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
+}
+END -- Grid1
+END -- stmtstats
+
+ATTRIBUTES
+Table table1:table1, width = 135 characters;
+Edit firstcm=formonly.firstcmdid, tabIndex=1, title=%"Num";
+Edit fglcmd=formonly.fglcmd, tabIndex=2, title=%"Command", scroll;
+Edit fglsql=formonly.fglsql, tabIndex=3, title=%"SQL", scroll;
+Edit fglcur=formonly.fglcursor, tabIndex=4, title=%"Cursor", scroll;
+Edit occur=formonly.occurences, tabIndex=5, title=%"Occurrences";
+Edit sqler=formonly.sqlerrors, tabIndex=6, title=%"SQL Errors";
+Edit sqlno=formonly.sqlnotfnd, tabIndex=7, title=%"Not Founds";
+Edit time_avg=formonly.time_avg, tabIndex=8, title=%"Time AVG";
+Edit time_min=formonly.time_min, tabIndex=9, title=%"Time MIN";
+Edit time_max=formonly.time_max, tabIndex=10, title=%"Time MAX";
+Edit time_tot=formonly.time_tot, tabIndex=11, title=%"Time TOT";
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sr(formonly.firstcmdid,formonly.fglcmd,formonly.fglsql,formonly.fglcursor,formonly.occurences,formonly.sqlerrors,formonly.sqlnotfnd,formonly.time_avg,formonly.time_min,formonly.time_max,formonly.time_tot)
+END -- INSTRUCTIONS
+

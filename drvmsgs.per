@@ -1,0 +1,44 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/toptest/tiptop/ds4gl2/fglsqldeb/drvmsgs.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (text=%"資訊庫回饋訊息")
+Grid Grid1
+{
+ <T table1                                             >
+ [posi|srcfile        |srcli|message                   ]
+ [posi|srcfile        |srcli|message                   ]
+ [posi|srcfile        |srcli|message                   ]
+ [posi|srcfile        |srcli|message                   ]
+ [posi|srcfile        |srcli|message                   ]
+ [posi|srcfile        |srcli|message                   ]
+ [posi|srcfile        |srcli|message                   ]
+ [posi|srcfile        |srcli|message                   ]
+ [posi|srcfile        |srcli|message                   ]
+ [posi|srcfile        |srcli|message                   ]
+ <                                                     >
+[msgtext                                                ]
+[                                                       ]
+[                                                       ]
+}
+END -- Grid1
+END -- drvmsgs
+
+ATTRIBUTES
+Table table1:table1, unsortableColumns, width = 55 characters;
+Phantom formonly.cmdid;
+Edit posi=formonly.position, tabIndex=2, title=%"位置";
+Edit srcfile=formonly.srcfile, tabIndex=3, title=%"原始碼";
+Edit srcli=formonly.srcline, tabIndex=4, title=%"行";
+Edit message=formonly.message, tabIndex=5, title=%"除錯訊息", scroll;
+TextEdit msgtext=formonly.msgtext, tabIndex=6;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD sr(formonly.cmdid,formonly.position,formonly.srcfile,formonly.srcline,formonly.message)
+SCREEN RECORD Undefined(formonly.msgtext)
+END -- INSTRUCTIONS
+

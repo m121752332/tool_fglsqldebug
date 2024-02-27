@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm gstVersion="22800" name="ManagedForm" uid="{46dd3aff-0000-4000-8d35-89773f7df488}">
+  <AGSettings/>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="sr" order="" uid="{952a7406-0000-4000-8914-07e98fed0be2}" where="">
+    <RecordField colName="firstcmdid" fieldIdRef="0" name="firstcmdid" sqlTabName="formonly" table_alias_name="" uid="{38f55ef6-0000-4000-ac78-1c801318206c}"/>
+    <RecordField colName="fglcmd" fieldIdRef="1" name="fglcmd" sqlTabName="formonly" table_alias_name="" uid="{11b8bc33-0000-4000-8173-79d17423ae4f}"/>
+    <RecordField colName="fglsql" fieldIdRef="2" name="fglsql" sqlTabName="formonly" table_alias_name="" uid="{c93446a8-0000-4000-9ef8-d5780d94d6a1}"/>
+    <RecordField colName="fglcursor" fieldIdRef="3" name="fglcursor" sqlTabName="formonly" table_alias_name="" uid="{9c56a04f-0000-4000-a701-9ce06080a7ec}"/>
+    <RecordField colName="occurences" fieldIdRef="4" name="occurences" sqlTabName="formonly" table_alias_name="" uid="{a2a762ac-0000-4000-8b69-e1099f51b6b6}"/>
+    <RecordField colName="sqlerrors" fieldIdRef="5" name="sqlerrors" sqlTabName="formonly" table_alias_name="" uid="{16311352-0000-4000-8503-82d424e4790b}"/>
+    <RecordField colName="sqlnotfnd" fieldIdRef="6" name="sqlnotfnd" sqlTabName="formonly" table_alias_name="" uid="{9c3b285e-0000-4000-9d80-3947f9973403}"/>
+    <RecordField colName="time_avg" fieldIdRef="7" name="time_avg" sqlTabName="formonly" table_alias_name="" uid="{8c5408f7-0000-4000-a49c-5dd75121ceca}"/>
+    <RecordField colName="time_min" fieldIdRef="8" name="time_min" sqlTabName="formonly" table_alias_name="" uid="{b92b0dd4-0000-4000-bbf4-07310dbded2b}"/>
+    <RecordField colName="time_max" fieldIdRef="9" name="time_max" sqlTabName="formonly" table_alias_name="" uid="{b7ca7db6-0000-4000-8d12-107f38051495}"/>
+    <RecordField colName="time_tot" fieldIdRef="10" name="time_tot" sqlTabName="formonly" table_alias_name="" uid="{a86185e9-0000-4000-9071-35338b157521}"/>
+  </Record>
+  <Form gridHeight="6" gridWidth="136" name="stmtstats" text="SQL Statement statistics">
+    <Grid gridHeight="6" gridWidth="136" name="Grid1" posX="0" posY="0">
+      <Table gridHeight="6" gridWidth="135" name="table1" posX="1" posY="0" totalRows="5" unitWidth="characters" width="135">
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="firstcmdid" columnCount="" fieldId="0" gridHeight="1" gridWidth="7" name="firstcmdid" posX="0" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="1" table_alias_name="" title="Num" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="fglcmd" columnCount="" fieldId="1" gridHeight="1" gridWidth="15" name="fglcmd" posX="7" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="2" table_alias_name="" title="Command" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="fglsql" columnCount="" fieldId="2" gridHeight="1" gridWidth="17" name="fglsql" posX="22" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="3" table_alias_name="" title="SQL" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="fglcursor" columnCount="" fieldId="3" gridHeight="1" gridWidth="6" name="fglcursor" posX="39" posY="0" rowCount="" scroll="true" sqlTabName="formonly" stepX="" stepY="" tabIndex="4" table_alias_name="" title="Cursor" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="occurences" columnCount="" fieldId="4" gridHeight="1" gridWidth="5" name="occurences" posX="45" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="5" table_alias_name="" title="Occurrences" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="sqlerrors" columnCount="" fieldId="5" gridHeight="1" gridWidth="5" name="sqlerrors" posX="50" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="6" table_alias_name="" title="SQL Errors" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="sqlnotfnd" columnCount="" fieldId="6" gridHeight="1" gridWidth="5" name="sqlnotfnd" posX="55" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="7" table_alias_name="" title="Not Founds" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="time_avg" columnCount="" fieldId="7" gridHeight="1" gridWidth="15" name="time_avg" posX="60" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="8" table_alias_name="" title="Time AVG" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="time_min" columnCount="" fieldId="8" gridHeight="1" gridWidth="15" name="time_min" posX="75" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="9" table_alias_name="" title="Time MIN" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="time_max" columnCount="" fieldId="9" gridHeight="1" gridWidth="16" name="time_max" posX="90" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="10" table_alias_name="" title="Time MAX" widget="Edit"/>
+        <Edit aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="time_tot" columnCount="" fieldId="10" gridHeight="1" gridWidth="17" name="time_tot" posX="106" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" tabIndex="11" table_alias_name="" title="Time TOT" widget="Edit"/>
+      </Table>
+    </Grid>
+  </Form>
+</ManagedForm>

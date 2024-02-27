@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form name="drvmsgs.tmp" build="2.40.04-2081.15" text="資訊庫回饋訊息" width="57" height="15">
+  <LStr text="資訊庫回饋訊息"/>
+  <Grid name="grid1" width="57" height="15">
+    <Table pageSize="10" name="table1" unsortableColumns="1" width="55" tabName="sr" posY="0" posX="1" gridWidth="55" gridHeight="12">
+      <PhantomColumn name="formonly.cmdid" colName="cmdid" fieldId="0" sqlTabName="formonly" tabIndex="7">
+        <PhantomEdit width="1"/>
+      </PhantomColumn>
+      <TableColumn name="formonly.position" colName="position" fieldId="1" sqlTabName="formonly" tabIndex="2" text="位置">
+        <Edit width="4"/>
+        <LStr text="位置"/>
+      </TableColumn>
+      <TableColumn name="formonly.srcfile" colName="srcfile" fieldId="2" sqlTabName="formonly" tabIndex="3" text="原始碼">
+        <Edit width="15"/>
+        <LStr text="原始碼"/>
+      </TableColumn>
+      <TableColumn name="formonly.srcline" colName="srcline" fieldId="3" sqlTabName="formonly" tabIndex="4" text="行">
+        <Edit width="5"/>
+        <LStr text="行"/>
+      </TableColumn>
+      <TableColumn name="formonly.message" colName="message" fieldId="4" sqlTabName="formonly" tabIndex="5" text="除錯訊息">
+        <Edit width="26" scroll="1"/>
+        <LStr text="除錯訊息"/>
+      </TableColumn>
+    </Table>
+    <FormField name="formonly.msgtext" colName="msgtext" fieldId="5" sqlTabName="formonly" tabIndex="6">
+      <TextEdit width="55" height="3" wantReturns="1" scroll="1" posY="12" posX="1" gridWidth="55" gridHeight="3"/>
+    </FormField>
+  </Grid>
+  <RecordView tabName="formonly">
+    <Link colName="cmdid" fieldIdRef="0"/>
+    <Link colName="position" fieldIdRef="1"/>
+    <Link colName="srcfile" fieldIdRef="2"/>
+    <Link colName="srcline" fieldIdRef="3"/>
+    <Link colName="message" fieldIdRef="4"/>
+    <Link colName="msgtext" fieldIdRef="5"/>
+  </RecordView>
+  <RecordView tabName="undefined">
+    <Link colName="msgtext" fieldIdRef="5"/>
+  </RecordView>
+</Form>
