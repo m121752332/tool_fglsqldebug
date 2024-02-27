@@ -53,12 +53,12 @@
 
 方法一: TIPTOP中請用開發LICENSE去編譯fglsqldebug.4gl
 ```console
-fglcomp fglsqldebug
+tiptop@server:~$ fglcomp fglsqldebug
 ```
 
 方法二: 使用shell r.cs 指定開發目錄也能編譯 [default is (/u1/genero/fgl.dev]
 ```console
-tiptop@vs:~$ r.cs fglsqldebug
+tiptop@server:~$ r.cs fglsqldebug
 Please specify your genero development path
 
 default is (/u1/genero/fgl.dev):
