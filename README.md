@@ -1,13 +1,13 @@
 # FGLSQLDEBUG log viewer
 
-## �ԭz
+## 敘述
 
 This tool can read an FGLSQLDEBUG output, to show the log records in a graphical interface.
 You can then sort, search and filter log records, to find what you are looking for.
 
 ![FGLSQLDEBUG viewer (GDC)](https://github.com/m121752332/tool_fglsqldebug/blob/master/docs/fglsqldebug-screen-001.png)
 
-## �ϥλݨD
+## 使用需求
 
 * Genero BDL 2.40+
 * Genero Desktop Client 2.40+
@@ -23,7 +23,7 @@ You can then sort, search and filter log records, to find what you are looking f
 1. Load the fglsqldebug.4pw project
 2. Build the project
 
-## �Ϊk
+## 用法
 
 1. Get an FGLSQLDEBUG log to analyze
 2. Define FGLSOURCEPATH to the .4gl sources that generated the FGLSQLDEBUG log
@@ -39,12 +39,22 @@ You can force a re-parsing with the -r option.
 
 The tool can also show the source file, if the FGLSOURCEPATH environment variables is defined.
 
-## �аѦҭ�t���
+## 請參考原廠文件
 
 See [Genero BDL documentation](http://www.4js.com/download/documentation) for more details about
 FGLSQLDEBUG and FGLSOURCEPATH environment variables.
 
 
-## �����
+## 中文化
 
-�w�c�餤��B�z�A�ϥΩ�TIPTOP GP 5.3�����L
+已繁體中文處理，使用於TIPTOP GP 5.3除錯過
+
+## 畫面修改
+
+若自行編輯畫面後，可透過原廠指令編譯畫面
+```程式類型=
+gsform -M -i -dbname ds -keep fglsqldebug.4fd
+gsform -M -i -dbname ds -keep stmtstats.4fd
+gsform -M -i -dbname ds -keep showtext.4fd
+gsform -M -i -dbname ds -keep drvmsgs.4fd
+```
