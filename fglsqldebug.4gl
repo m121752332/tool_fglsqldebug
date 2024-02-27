@@ -112,17 +112,22 @@ DEFINE fglsourcepath STRING
 
 MAIN
     CALL check_front_end()
+    --停用
     CALL define_collapsible_group_style()
     OPTIONS INPUT WRAP, FIELD ORDER FORM
-    --DEFER INTERRUPT DEFER QUIT
+    DEFER INTERRUPT
+    DEFER QUIT
     LET fglsourcepath = fgl_getenv("FGLSOURCEPATH")
+    
+    DISPLAY "MAIN()  FGLSOURCEPATH:",fglsourcepath
+    
     CALL process_arguments()
 END MAIN
 
 FUNCTION check_front_end()
     DEFINE fen STRING
     LET fen = ui.Interface.getFrontEndName()
-    DISPLAY "=== check front_end name:"||fen
+    DISPLAY "CALL check_front_end() front_end name:"||fen
     IF fen!="GDC" AND fen!="GWC" AND fen!="GBC" THEN
        DISPLAY "ERROR: This tool is designed for desktop front-ends (GDC, GWC, GBC)"
        EXIT PROGRAM 1
@@ -156,7 +161,8 @@ FUNCTION do_monitor(filename, force_reload)
     DEFINE params t_params,
            x, cmdid INTEGER
 
-    OPEN WINDOW f1 WITH FORM "/u1/toptest/tiptop/ds4gl2/fglsqldeb/fglsqldebug"
+    #OPEN WINDOW f1 WITH FORM "/u1/toptest/tiptop/ds4gl2/fglsqldeb/fglsqldebug"
+    OPEN WINDOW f1 WITH FORM "fglsqldebug"
     CALL ui.Interface.refresh()
 
     LET params.filename = filename
@@ -439,7 +445,7 @@ FUNCTION show_source(srcfile,srcline)
     END WHILE
     OPEN WINDOW w_source WITH FORM ("showtext")
          ATTRIBUTES(TEXT=tmp,STYLE="dialog")
-    DISPLAY ARRAY arr TO sr.*
+    DISPLAY ARRAY arr TO sr.* ATTRIBUTES(CANCEL=FALSE)
         BEFORE DISPLAY
            CALL DIALOG.setCurrentRow("sr",srcline)
     END DISPLAY
@@ -811,8 +817,6 @@ FUNCTION load_file(filename, force_reload)
            totkb INTEGER
 
     DISPLAY SFMT("=== CALL %1","init_database")
-    
-   #LET filename = "/u1/topprod/topcust/cpy/4gl/cpyp001.log"
     CALL init_database(filename, force_reload) RETURNING s, tmpfile
     DISPLAY SFMT("=== %1 OK tmpfile=%2 s=%3","init_database",tmpfile,s)
     CASE s
@@ -852,9 +856,17 @@ FUNCTION load_file(filename, force_reload)
     LET last_cmdid = 0
     INITIALIZE cmd.* TO NULL
 
+    CALL fglt_progress_open("FGLSQLDEBUG 除錯工具 - 進度條",
+              SFMT("讀取檔案: %1\n檔案大小: %2 Kb",filename,totkb),
+              0,100)
 
-    DISPLAY SFMT("=== %1","WHILE NOT ch.isEof")
+    LET int_flag = FALSE
+
     WHILE NOT ch.isEof()
+
+        IF int_flag THEN
+           EXIT WHILE
+        END IF
 
         IF rejected THEN
            LET rejected = FALSE
@@ -864,12 +876,11 @@ FUNCTION load_file(filename, force_reload)
         LET cursz = cursz + line.getLength()
         IF cursz MOD 2000 == 0 THEN
            LET progress = ((cursz/totsz)*100)
-           MESSAGE SFMT("Loading: %1%% / %2 Kb", progress, totkb)
-           CALL ui.Interface.refresh()
+           --MESSAGE SFMT("Loading: %1%% / %2 Kb", progress, totkb)
+           --CALL ui.Interface.refresh()
+           CALL fglt_progress_show(progress)
         END IF
 
-        #讀取參數
-        #DISPLAY SFMT("=== %1","read variable")
         IF sv.vartype IS NOT NULL THEN
            CALL extract_tail(" |  t:", line) RETURNING found, tail
            IF NOT found THEN
@@ -1171,6 +1182,17 @@ FUNCTION load_file(filename, force_reload)
 
     END WHILE
 
+    MESSAGE ""
+    CALL fglt_progress_close()
+
+    IF INT_FLAG THEN
+       ROLLBACK WORK
+       CALL mbox_ok("用戶已中斷SQL紀錄檔讀取!")
+       LET INT_FLAG = FALSE
+       LET s= os.Path.delete(tmpfile)
+       RETURN FALSE
+    END IF
+
     -- Last command ...
     IF cmd.cmdid IS NOT NULL THEN
        IF cmd.fglsql IS NULL THEN
@@ -1181,10 +1203,8 @@ FUNCTION load_file(filename, force_reload)
 
     COMMIT WORK
 
-    MESSAGE ""
-
     IF NOT valid THEN
-       CALL mbox_ok(SFMT("The file %1 does not seem to be a valid FGLSQLDEBUG file",filename))
+       CALL mbox_ok(SFMT("檔案: %1 應該不是有效的 FGLSQLDEBUG檔案!",filename))
        LET s= os.Path.delete(tmpfile)
        RETURN FALSE
     END IF
@@ -1430,10 +1450,19 @@ FUNCTION collect_global_stats()
               UNIQUE (fglcmd, fglsql, fglcursor)
            )
 
+    CALL fglt_progress_open("FGLSQLDEBUG 除錯工具 - 進度條",
+              SFMT("收集資料並統計分析共 %1 條SQL語法",log_arr.getLength()),
+              0,log_arr.getLength())
+
+    LET int_flag = FALSE
     FOR x=1 TO log_arr.getLength()
+        IF int_flag THEN
+           EXIT FOR
+        END IF
         IF x MOD 200 == 0 THEN
-           MESSAGE SFMT("Collecting statistics: row %1 / %2", x, log_arr.getLength() )
-           CALL ui.Interface.refresh()
+           --MESSAGE SFMT("Collecting statistics: row %1 / %2", x, log_arr.getLength() )
+           --CALL ui.Interface.refresh()
+           CALL fglt_progress_show(x)
         END IF
         LET l_fglcmd    = NVL(log_arr[x].fglcmd,"NONE")
         LET l_fglsql    = NVL(log_arr[x].fglsql,"NONE")
@@ -1448,8 +1477,15 @@ FUNCTION collect_global_stats()
               VALUES ( log_arr[x].cmdid, l_fglcmd, l_fglsql, l_fglcursor, stat.* )
         END IF 
     END FOR
+    CALL fglt_progress_close()
+    IF int_flag THEN
+        CALL mbox_ok("用戶已停用SQL語法分析工具!")
+        LET int_flag = FALSE
+        RETURN FALSE
+    END IF
     SELECT COUNT(*) INTO x FROM stmt_stats
-    MESSAGE SFMT("Statistic collected: %1 SQL statements analyzed.",x)
+    MESSAGE SFMT("已收集統計分析共 %1 條SQL語法",x)
+    RETURN TRUE
 END FUNCTION
 
 FUNCTION show_global_stats()
@@ -1469,7 +1505,9 @@ FUNCTION show_global_stats()
            x, n, cmdid INTEGER,
            tm INTERVAL HOUR(9) TO FRACTION(5)
 
-    CALL collect_global_stats()
+    IF NOT collect_global_stats() THEN
+       RETURN -1
+    END IF
 
     LET tm = INTERVAL(0:00:00.00000) HOUR(9) TO FRACTION(5)
     DECLARE c_ps CURSOR FOR SELECT * FROM stmt_stats ORDER BY firstcmdid
@@ -1541,4 +1579,46 @@ FUNCTION define_collapsible_group_style()
    #LET attdefs["collapsible"] = "yes"
    #LET attdefs["backgroundColor"] = "lightBlue"
    #CALL style_define("Group.collapsible", attdefs)
+END FUNCTION
+
+#工具進度條處理
+PRIVATE FUNCTION fglt_progress_open(title,comment,vmin,vmax)
+  DEFINE title STRING
+  DEFINE comment STRING
+  DEFINE vmin, vmax INTEGER
+  DEFINE w ui.Window
+  DEFINE f ui.Form
+  DEFINE p,n om.DomNode
+  DEFINE nl om.NodeList
+
+  OPEN WINDOW __fgltprogress WITH FORM "fgltprogress"
+              ATTRIBUTES(style="dialog2",text=title)
+
+  LET w = ui.Window.getCurrent()
+  LET f = w.getForm()
+
+  IF comment IS NULL THEN
+     CALL f.setFieldHidden("comment", 1)
+  ELSE
+     DISPLAY BY NAME comment
+  END IF
+
+  LET p = w.getNode()
+  LET nl = p.selectByPath("//ProgressBar")
+  LET n = nl.item(1)
+  CALL n.setAttribute("valueMin",vmin)
+  CALL n.setAttribute("valueMax",vmax)
+
+END FUNCTION
+
+PRIVATE FUNCTION fglt_progress_show(progress)
+  DEFINE progress INTEGER
+  CURRENT WINDOW IS __fgltprogress
+  DISPLAY BY NAME progress
+  CALL ui.Interface.refresh()
+END FUNCTION
+
+#+ Terminates a progress session.
+PRIVATE FUNCTION fglt_progress_close()
+  CLOSE WINDOW __fgltprogress
 END FUNCTION

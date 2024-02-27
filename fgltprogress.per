@@ -1,0 +1,29 @@
+---------------------------------------------------------------------------------- 
+-- File created from /u1/toptest/tiptop/ds4gl2/fglsqldeb/fgltprogress.4fd by Genero Studio
+-- WARNING! All changes made in this file will be lost!
+----------------------------------------------------------------------------------
+
+SCHEMA formonly
+
+LAYOUT (version="1.00")
+Grid Grid1
+{
+[comment                                                      ]
+[                                                             ]
+[                                                             ]
+[progress                                                     ]
+                         [interrupt]
+}
+END -- Grid1
+END -- fgltprogress
+
+ATTRIBUTES
+LABEL comment=formonly.comment;
+ProgressBar progress=formonly.progress, valueMin=0, valueMax=100;
+Button interrupt:interrupt, tabIndex=3;
+END -- ATTRIBUTES
+
+INSTRUCTIONS
+SCREEN RECORD Undefined(formonly.comment,formonly.progress)
+END -- INSTRUCTIONS
+

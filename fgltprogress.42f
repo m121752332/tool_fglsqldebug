@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Form name="fgltprogress.tmp" build="2.40.04-2081.15" version="1.00" width="63" height="5">
+  <Grid name="grid1" width="63" height="5">
+    <FormField name="formonly.comment" colName="comment" fieldId="0" sqlTabName="formonly" noEntry="1" tabIndex="4">
+      <Label width="61" posY="0" posX="1" gridWidth="61" gridHeight="3"/>
+    </FormField>
+    <FormField name="formonly.progress" colName="progress" fieldId="1" sqlTabName="formonly" noEntry="1" tabIndex="5">
+      <ProgressBar width="61" valueMin="0" valueMax="100" posY="3" posX="1" gridWidth="61"/>
+    </FormField>
+    <Button name="interrupt" width="9" tabIndex="3" posY="4" posX="26" gridWidth="9"/>
+  </Grid>
+  <RecordView tabName="formonly">
+    <Link colName="comment" fieldIdRef="0"/>
+    <Link colName="progress" fieldIdRef="1"/>
+  </RecordView>
+  <RecordView tabName="undefined">
+    <Link colName="comment" fieldIdRef="0"/>
+    <Link colName="progress" fieldIdRef="1"/>
+  </RecordView>
+</Form>

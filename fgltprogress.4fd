@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ManagedForm gstVersion="22800" name="ManagedForm" uid="{2eeb13c5-0000-4000-a2d5-06d5dc255b40}">
+  <AGSettings/>
+  <Record additionalTables="" joinLeft="" joinOperator="" joinRight="" name="Undefined" order="" uid="{ecc23d8c-0000-4000-9262-c75b00463337}" where="">
+    <RecordField colName="comment" fieldIdRef="0" name="comment" sqlTabName="formonly" table_alias_name="" uid="{5dcfdd3f-0000-4000-a047-aa676786fa9f}"/>
+    <RecordField colName="progress" fieldIdRef="1" name="progress" sqlTabName="formonly" table_alias_name="" uid="{8b749821-0000-4000-afc5-895f00b4a569}"/>
+  </Record>
+  <Form gridHeight="5" gridWidth="63" name="fgltprogress" text="SQLDEBUG除錯工具 - 讀取進度" version="1.00">
+    <Grid gridHeight="5" gridWidth="63" name="Grid1" posX="0" posY="0">
+      <FFLabel aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="comment" columnCount="" fieldId="0" gridHeight="3" gridWidth="61" name="comment" posX="1" posY="0" rowCount="" sqlTabName="formonly" stepX="" stepY="" table_alias_name="" widget="FFLabel"/>
+      <ProgressBar aggregateColName="" aggregateName="" aggregateTableAliasName="" aggregateTableName="" colName="progress" columnCount="" fieldId="1" gridHeight="1" gridWidth="61" name="progress" posX="1" posY="3" rowCount="" sqlTabName="formonly" stepX="" stepY="" table_alias_name="" valueMax="100" valueMin="0" widget="ProgressBar"/>
+      <Button gridHeight="1" gridWidth="9" name="interrupt" posX="26" posY="4" tabIndex="3" text="強制中斷"/>
+    </Grid>
+  </Form>
+  <DiagramLayout>
+    <![CDATA[AAAAAgAAAEwAewBlAGMAYwAyADMAZAA4AGMALQAwADAAMAAwAC0ANAAwADAAMAAtADkAMgA2ADIALQBjADcANQBiADAAMAA0ADYAMwAzADMANwB9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAEwAewA1AGQAYwBmAGQAZAAzAGYALQAwADAAMAAwAC0ANAAwADAAMAAtAGEAMAA0ADcALQBhAGEANgA3ADYANwA4ADYAZgBhADkAZgB9QBbbbcgAAABAOkkkpgAAAAAAAAAAAAAAAQAAAEwAewA4AGIANwA0ADkAOAAyADEALQAwADAAMAAwAC0ANAAwADAAMAAtAGEAZgBjADUALQA4ADkANQBmADAAMABiADQAYQA1ADYAOQB9QBbbbcgAAABARgAAEIAAAAAAAAAAAAAAAQ==]]>
+  </DiagramLayout>
+</ManagedForm>
