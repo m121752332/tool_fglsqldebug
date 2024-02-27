@@ -51,9 +51,14 @@
 
 ## 程式修改說明
 
-TIPTOP中請用開發LICENSE去編譯fglsqldebug.4gl
+方法一: TIPTOP中請用開發LICENSE去編譯fglsqldebug.4gl
 ```
 fglcomp fglsqldebug
+```
+
+方法二: 使用shell r.cs 指定開發目錄也能編譯 [default is (/u1/genero/fgl.dev]
+```
+r.cs fglsqldebug
 ```
 
 ## 畫面修改說明
