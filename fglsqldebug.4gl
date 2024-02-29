@@ -4,7 +4,8 @@ IMPORT util
 
 DATABASE ds
 CONSTANT TOOL_VERSION = "1.07"
-CONSTANT TOOL_ABOUT_MSG = "\nFGLSQLDEBUG Viewer Version %1\n\nFour Js Development Tools 2016\n\n"
+CONSTANT TOOL_ABOUT_MSG = "\nFGLSQLDEBUG Viewer Version %1\n\nFour Js Development Tools 2016\n\n翻譯:繁體中文 BY TIGER"
+CONSTANT MSG_BOX_TITLE = "訊息框"
 
 TYPE t_connection RECORD
          connid INTEGER,
@@ -1230,7 +1231,7 @@ END FUNCTION
 
 FUNCTION mbox_ok(msg)
     DEFINE msg STRING
-    MENU "ENAudit" ATTRIBUTES(STYLE="dialog",COMMENT=msg)
+    MENU MSG_BOX_TITLE ATTRIBUTES(STYLE="dialog",COMMENT=msg)
         COMMAND "Ok" EXIT MENU
     END MENU
 END FUNCTION
@@ -1238,7 +1239,7 @@ END FUNCTION
 FUNCTION mbox_yn(msg)
     DEFINE msg STRING
     DEFINE r BOOLEAN
-    MENU "ENAudit" ATTRIBUTES(STYLE="dialog",COMMENT=msg)
+    MENU MSG_BOX_TITLE ATTRIBUTES(STYLE="dialog",COMMENT=msg)
         COMMAND "Yes" LET r = TRUE
         COMMAND "No"  LET r = FALSE
     END MENU
@@ -1563,6 +1564,7 @@ FUNCTION style_define(name STRING, attdefs DICTIONARY OF STRING)
     DEFINE nl om.NodeList
     DEFINE names DYNAMIC ARRAY OF STRING
     DEFINE x INTEGER
+    
     LET rn = ui.Interface.getRootNode()
     LET nl = rn.selectByPath("//StyleList")
     IF nl.getLength() != 1 THEN
