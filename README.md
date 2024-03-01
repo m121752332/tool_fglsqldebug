@@ -11,10 +11,9 @@ SQL statements to be optimized or fixed.
 
 ## Prerequisites
 
-* Genero BDL 3.20+
-* Genero Browser Client 1.00.52+
-* Genero Desktop Client 3.20+
-* Genero Studio 3.20+
+* Genero BDL 2.40+
+* Genero Desktop Client 2.40+
+* Genero Studio 2.40+
 * GNU Make
 
 ## Compilation from command line
