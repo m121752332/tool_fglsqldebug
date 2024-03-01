@@ -1,3 +1,4 @@
+English | [繁體中文](./README.zh-TW.md)
 # FGLSQLDEBUG log viewer
 
 ## 工具描述
@@ -76,3 +77,10 @@ gsform -M -i -dbname ds -keep drvmsgs.4fd
 ```
 
 參考: [gsform語法](https://4js.com/online_documentation/fjs-gst-manual-html/index.html#gst-topics/c_gst_formdesigner_designform_012.html)
+
+## 貢獻作者
+
+This project exists thanks to all the people who contribute. 
+
+<a href="https://github.com/m121752332/tool_fglsqldebug/graphs/contributors"><img src="https://avatars.githubusercontent.com/u/45743812?v=4" /></a>
+
