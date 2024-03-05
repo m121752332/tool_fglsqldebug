@@ -1,78 +1,56 @@
+English | [繁體中文](./README.zh-TW.md)
 # FGLSQLDEBUG log viewer
 
-## 工具描述
+## Description
 
-本工具可以讀取FGLSQLDEBUG輸出，並在圖形介面中顯示日誌記錄。  
-然後，您可以對日誌記錄進行排序、搜尋和過濾，以找到您要尋找的內容。
+This Genero tool can read an FGLSQLDEBUG output, to show the log records in a
+graphical interface. You can then sort, search and filter log records, to find
+SQL statements to be optimized or fixed.
 
-![FGLSQLDEBUG viewer (GDC)](https://github.com/m121752332/tool_fglsqldebug/blob/master/docs/fglsqldebug-screen-001.png)
+![FGLSQLDEBUG viewer (GDC)](https://github.com/FourjsGenero/tool_fglsqldebug/raw/master/docs/fglsqldebug-screen-001.png)
 
-## 工具版本需求
+## Prerequisites
 
 * Genero BDL 2.40+
 * Genero Desktop Client 2.40+
 * Genero Studio 2.40+
 * GNU Make
 
-## 指令視窗用法
+## Compilation from command line
 
 1. make clean all
 
-## Genero Studio開發工具用法
+## Compilation in Genero Studio
 
-1. 讀取 fglsqldebug.4pw 專案檔
-2. 編譯整個專案包
+1. Load the fglsqldebug.4pw project
+2. Build the project
 
-## 操作說明
+## Usage
 
-1. 取得 FGLSQLDEBUG 記錄檔做於後續分析，TIPTOP可用r.r2d 收集執行後的結果
-2. 設置 FGLSOURCEPATH 環境變數把4gl的目錄添加用於產生 FGLSQLDEBUG 後的紀錄
-3. 執行工具語法 fglrun fglsqldebug [-f logfile [-r]]
-4. 畫面的第一行可以挑選LOG檔讀取產生的紀錄
-5. 使用過濾器可以塞選LOG的紀錄
-6. 執行分析統計以尋找耗時的 SQL 語句
+1. Get an FGLSQLDEBUG log to analyze
+2. Define FGLSOURCEPATH to the .4gl sources that generated the FGLSQLDEBUG log
+3. Run the tool with fglrun fglsqldebug [-f logfile [-r]]
+4. In the first field, you can load another log file
+5. Use the Filter panel on bottom of the form to filter log records
+6. Run profiling statistics for find time consuming SQL statements
 
-如果log記錄不存在資料庫中，則會將log檔轉載入到TIPTOP的ds資料庫中，並且為每個日誌建立成一個檔案集，
-預設情況下，如果資料庫內已存在LOG資料，該工具不會重新解析日誌檔案內容，
-因此你也能強制重取LOG檔透過 -r 參數處理。
+The log records are loaded into an SQLite database created automatically if it does not exist.
+One database file is created for each log.
+By default, the tool does not re-parse the log file if the database exists already.
+You can force a re-parsing with the -r option.
 
-若 FGLSOURCEPATH 環境變數有做好定義，本工具也能檢閱程式碼!!
+The tool can also show the source file, if the FGLSOURCEPATH environment variables is defined.
 ![檢視](https://github.com/m121752332/tool_fglsqldebug/blob/master/docs/fglsqldebug-screen-003.png)
 
-## 請參考原廠文件
+## See also
 
-參考 [Genero BDL documentation](http://www.4js.com/download/documentation) 
-更多詳細用法關於 FGLSQLDEBUG 和 FGLSOURCEPATH 環境變數介紹
+See [Genero BDL documentation](http://www.4js.com/download/documentation) for more details about
+FGLSQLDEBUG and FGLSOURCEPATH environment variables.
 
 
-## 繁體中文
+## Bug fixes:
 
-已繁體中文處理，使用於TIPTOP GP 5.3除錯過
-
-## 程式修改說明
-
-方法一: TIPTOP中請用開發LICENSE去編譯fglsqldebug.4gl
-```console
-tiptop@server:~$ fglcomp fglsqldebug
-```
-
-方法二: 使用shell r.cs 指定開發目錄也能編譯 [default is (/u1/genero/fgl.dev]
-```console
-tiptop@server:~$ r.cs fglsqldebug
-Please specify your genero development path
-
-default is (/u1/genero/fgl.dev):
-```
-
-## 畫面修改說明
-
-若自行編輯畫面後，可透過原廠指令編譯畫面
-```console
-gsform -M -i -dbname ds -keep fglsqldebug.4fd
-gsform -M -i -dbname ds -keep fgltprogress.4fd
-gsform -M -i -dbname ds -keep stmtstats.4fd
-gsform -M -i -dbname ds -keep showtext.4fd
-gsform -M -i -dbname ds -keep drvmsgs.4fd
-```
-
-參考: [gsform語法](https://4js.com/online_documentation/fjs-gst-manual-html/index.html#gst-topics/c_gst_formdesigner_designform_012.html)
+- 1.01: Multiple directories in FGLSOURCEPATH
+- 1.02: Bug fixes
+- 1.03: Global statistics
+- 1.04: Avoid freezing program (with IFX) when trying SELECT to check DB availability
