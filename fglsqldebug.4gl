@@ -203,11 +203,11 @@ FUNCTION do_monitor(filename, force_reload)
            CALL reload_rows(DIALOG,params.*)
         ON ACTION f_cursor
            LET params.current_cursor = IIF(params.current_cursor IS NULL,
-                                           log_arr[arr_curr()].sqlcursor, NULL)
+                                           log_arr[arr_curr()].sqlcursor, "")
            CALL reload_rows(DIALOG,params.*)
         ON ACTION f_source
            LET params.current_source = IIF(params.current_source IS NULL,
-                                           log_arr[arr_curr()].srcfile, NULL)
+                                           log_arr[arr_curr()].srcfile, "")
            CALL reload_rows(DIALOG,params.*)
     END DISPLAY
 

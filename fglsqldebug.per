@@ -53,25 +53,25 @@ Grid Grid1
 {
 [label1           ][filename                                                                ]
 
- <T table1                                                                                  >
- [cmdid |fglcmd   |fglcurs|sqlcod|exectime  |fglsq                |timestamp                ]
- [cmdid |fglcmd   |fglcurs|sqlcod|exectime  |fglsq                |timestamp                ]
- [cmdid |fglcmd   |fglcurs|sqlcod|exectime  |fglsq                |timestamp                ]
- [cmdid |fglcmd   |fglcurs|sqlcod|exectime  |fglsq                |timestamp                ]
- [cmdid |fglcmd   |fglcurs|sqlcod|exectime  |fglsq                |timestamp                ]
- [cmdid |fglcmd   |fglcurs|sqlcod|exectime  |fglsq                |timestamp                ]
- <                                                                                          >
+ <T table1                                                                                           >
+ [cmdid |fglcmd   |fglcurs|sqlcurso|sqlcod|exectime  |fglsq                |timestamp                ]
+ [cmdid |fglcmd   |fglcurs|sqlcurso|sqlcod|exectime  |fglsq                |timestamp                ]
+ [cmdid |fglcmd   |fglcurs|sqlcurso|sqlcod|exectime  |fglsq                |timestamp                ]
+ [cmdid |fglcmd   |fglcurs|sqlcurso|sqlcod|exectime  |fglsq                |timestamp                ]
+ [cmdid |fglcmd   |fglcurs|sqlcurso|sqlcod|exectime  |fglsq                |timestamp                ]
+ [cmdid |fglcmd   |fglcurs|sqlcurso|sqlcod|exectime  |fglsq                |timestamp                ]
+ <                                                                                                   >
  <G group1                                                                                   >
- [curr_sql1                                            ][label4  |f_timestamp               ]
- [                                                     ][label5       ][f_sqlcode           ]
- [                                                     ][label6       ][f_sqlstate          ]
- [curr_sql2                   |curr_sql3               ][label10       |f_sqlerrd2          ]
- [                            |                        ][label7        |f_sqlerrd3          ]
- [                            |                        ][lab|f_srcfile             |la1|f_sr]
+ [curr_sql1                                            ][label4  |f_timestamp                ]
+ [                                                     ][label5       ][f_sqlcode            ]
+ [                                                     ][label6       ][f_sqlstate           ]
+ [curr_sql2                   |curr_sql3               ][label10       |f_sqlerrd2           ]
+ [                            |                        ][label7        |f_sqlerrd3           ]
+ [                            |                        ][lab|f_srcfile             |la|f_srcl]
  [label2    ]
- [f_sqlerrm                                                                                 ]
+ [f_sqlerrm                                                                                  ]
  [label3    ]
- [f_sqlerrmsg                                                                               ]
+ [f_sqlerrmsg                                                                                ]
  <                                                                                           >
 
  <G group3                                                                                  >
@@ -115,79 +115,79 @@ ButtonEdit filename=formonly.filename, action=open, tabIndex=1, image="file", sc
 Table table1:Table1, width = 92 characters;
 Edit cmdid=formonly.cmdid, tabIndex=2, title=%"排序";
 Phantom formonly.connid;
-Edit fglcmd=formonly.fglcmd, tabIndex=4, title=%"指令", scroll;
+Edit fglcmd=formonly.fglcmd, tabIndex=3, title=%"指令", scroll;
 Phantom formonly.srcfile;
 Phantom formonly.srcline;
-Edit fglcurs=formonly.fglcursor, tabIndex=7, title=%"Cursor 指標", scroll;
-Phantom formonly.sqlcursor;
+Edit fglcurs=formonly.fglcursor, tabIndex=4, title=%"Cursor 指標", scroll;
+Edit sqlcurso=formonly.sqlcursor, tabIndex=5, title=%"語法指標", scroll;
 Phantom formonly.c_scroll;
 Phantom formonly.c_hold;
-Edit sqlcod=formonly.sqlcode, tabIndex=11, title=%"sqlcode";
+Edit sqlcod=formonly.sqlcode, tabIndex=6, title=%"sqlcode";
 Phantom formonly.sqlerrd2;
 Phantom formonly.sqlerrd3;
 Phantom formonly.sqlerrm;
 Phantom formonly.sqlerrmsg;
 Phantom formonly.sqlstate;
-Edit exectime=formonly.exectime, tabIndex=17, title=%"執行時間", comment=%"Execution time";
-Edit fglsq=formonly.fglsq, tabIndex=18, title=%"SQL語句", scroll;
+Edit exectime=formonly.exectime, tabIndex=7, title=%"執行時間", comment=%"Execution time";
+Edit fglsq=formonly.fglsq, tabIndex=8, title=%"SQL語句", scroll;
 Phantom formonly.natsql1;
 Phantom formonly.natsql2;
-Edit timestamp=formonly.timestamp, tabIndex=21, title=%"時間戳", comment=%"Timestamp";
+Edit timestamp=formonly.timestamp, tabIndex=9, title=%"時間戳", comment=%"Timestamp";
 Group group1:group1, text=%"SQL 語句", style="collapsible";
-TextEdit curr_sql1=formonly.curr_sql1, tabIndex=22, stretch=x, comment=%"SQL statement in program";
-TextEdit curr_sql2=formonly.curr_sql2, tabIndex=23, stretch=x, comment=%"Database Native SQL statement";
+TextEdit curr_sql1=formonly.curr_sql1, tabIndex=10, stretch=x, comment=%"SQL statement in program";
+TextEdit curr_sql2=formonly.curr_sql2, tabIndex=11, stretch=x, comment=%"Database Native SQL statement";
 Label label4:Label4, text=%"時間戳:", comment=%"Timestamp";
-Edit f_timestamp=formonly.f_timestamp, tabIndex=25, color = blue;
+Edit f_timestamp=formonly.f_timestamp, tabIndex=13, color = blue;
 Label label5:Label5, text=%"SQLCA.SQLCODE";
-Edit f_sqlcode=formonly.f_sqlcode, tabIndex=26, COLOR = RED WHERE f_sqlcode < 0;
+Edit f_sqlcode=formonly.f_sqlcode, tabIndex=14, COLOR = RED WHERE f_sqlcode < 0;
 Label label6:Label6, text=%"SQLSTATE";
-Edit f_sqlstate=formonly.f_sqlstate, tabIndex=27, color = cyan;
-TextEdit curr_sql3=formonly.curr_sql3, tabIndex=24, stretch=x, comment=%"Database Native SQL statement (2)";
+Edit f_sqlstate=formonly.f_sqlstate, tabIndex=15, color = cyan;
+TextEdit curr_sql3=formonly.curr_sql3, tabIndex=12, stretch=x, comment=%"Database Native SQL statement (2)";
 Label label10:Label10, text=%"SQLCA.SQLERRD(2)";
-Edit f_sqlerrd2=formonly.f_sqlerrd2, tabIndex=28, color = yellow;
+Edit f_sqlerrd2=formonly.f_sqlerrd2, tabIndex=16, color = yellow;
 Label label7:Label7, text=%"SQLCA.SQLERRD(3)";
-Edit f_sqlerrd3=formonly.f_sqlerrd3, tabIndex=29, color = blue;
+Edit f_sqlerrd3=formonly.f_sqlerrd3, tabIndex=17, color = blue;
 Label lab:Label8, text=%"原始碼:";
-Edit f_srcfile=formonly.f_srcfile, tabIndex=30, sizePolicy=dynamic;
-Label la1:Label9, text=%"行:";
-Edit f_sr=formonly.f_srcline type INTEGER, tabIndex=31;
+Edit f_srcfile=formonly.f_srcfile, tabIndex=18, sizePolicy=dynamic;
+Label la:Label9, text=%"行:";
+Edit f_srcl=formonly.f_srcline type INTEGER, tabIndex=19;
 Label label2:Label2, text=%"SQLCA.SQLERRM:";
-Edit f_sqlerrm=formonly.f_sqlerrm, tabIndex=32, color = red, scroll;
+Edit f_sqlerrm=formonly.f_sqlerrm, tabIndex=20, color = red, scroll;
 Label label3:Label3, text=%"SQLERRMESSAGE:";
-Edit f_sqlerrmsg=formonly.f_sqlerrmsg, tabIndex=33, color = red, scroll;
+Edit f_sqlerrmsg=formonly.f_sqlerrmsg, tabIndex=21, color = red, scroll;
 Group group3:group3, text=%"過濾器", style="collapsible";
 Label label11:Label11, text=%"原始碼:";
-ComboBox current_source=formonly.current_source, tabIndex=46;
-CheckBox only_errors=formonly.only_errors, tabIndex=47, text=%"僅錯誤數據", not null, required;
+ComboBox current_source=formonly.current_source, tabIndex=28;
+CheckBox only_errors=formonly.only_errors, tabIndex=29, text=%"僅錯誤數據", not null, required;
 Label label12:Label12, text=%"Cursor:";
-ComboBox current_cursor=formonly.current_cursor, tabIndex=48;
-CheckBox with_uvars=formonly.with_uvars, tabIndex=49, text=%"With USING", not null, required;
-CheckBox with_ivars=formonly.with_ivars, tabIndex=50, text=%"With INTO", not null, required;
+ComboBox current_cursor=formonly.current_cursor, tabIndex=30;
+CheckBox with_uvars=formonly.with_uvars, tabIndex=31, text=%"With USING", not null, required;
+CheckBox with_ivars=formonly.with_ivars, tabIndex=32, text=%"With INTO", not null, required;
 Label label13:Label13, text=%"時間 >=";
-Edit exec_time=formonly.exec_time, tabIndex=51, comment=%"Seconds";
-Edit exec_=formonly.exec_time_frac, tabIndex=52, format="&&&&&", comment=%"Fraction of seconds";
-CheckBox cursor_scroll=formonly.cursor_scroll, tabIndex=53, text=%"Scroll cursor", valueChecked = "Y", valueUnchecked = "N";
-CheckBox cursor_hold=formonly.cursor_hold, tabIndex=54, text=%"Hold cursor", valueChecked = "Y", valueUnchecked = "N";
+Edit exec_time=formonly.exec_time, tabIndex=33, comment=%"Seconds";
+Edit exec_=formonly.exec_time_frac, tabIndex=34, format="&&&&&", comment=%"Fraction of seconds";
+CheckBox cursor_scroll=formonly.cursor_scroll, tabIndex=35, text=%"Scroll cursor", valueChecked = "Y", valueUnchecked = "N";
+CheckBox cursor_hold=formonly.cursor_hold, tabIndex=36, text=%"Hold cursor", valueChecked = "Y", valueUnchecked = "N";
 Label label14:Label14, text=%"SQL 語句含有:";
-Edit find_keyword=formonly.find_keyword, tabIndex=55, scroll;
+Edit find_keyword=formonly.find_keyword, tabIndex=37, scroll;
 Label label15:Label15, text=%"SQLCA.SQLCODE=";
-Edit sql_code=formonly.sql_code, tabIndex=56;
+Edit sql_code=formonly.sql_code, tabIndex=38;
 Label label16:Label16, text=%"SQLCA.SQLERRD(2)=";
-Edit sqlerrd_2=formonly.sqlerrd_2, tabIndex=57;
+Edit sqlerrd_2=formonly.sqlerrd_2, tabIndex=39;
 Label label17:Label17, text=%"SQLCA.SQLERRD(3)>=";
-Edit sqlerrd_3=formonly.sqlerrd_3, tabIndex=58;
+Edit sqlerrd_3=formonly.sqlerrd_3, tabIndex=40;
 Phantom formonly.cid_u;
 Phantom formonly.vtp_u;
-Edit pos_=formonly.pos_u, tabIndex=36, title=%"索引";
-Edit typ_u=formonly.typ_u, tabIndex=37, title=%"參數類型", scroll;
+Edit pos_=formonly.pos_u, tabIndex=22, title=%"索引";
+Edit typ_u=formonly.typ_u, tabIndex=23, title=%"參數類型", scroll;
 Phantom formonly.flg_u;
-Edit val_u=formonly.val_u, tabIndex=39, title=%"參數值", scroll;
+Edit val_u=formonly.val_u, tabIndex=24, title=%"參數值", scroll;
 Phantom formonly.cid_i;
 Phantom formonly.vtp_i;
-Edit pos1=formonly.pos_i, tabIndex=42, title=%"索引";
-Edit typ_i=formonly.typ_i, tabIndex=43, title=%"參數類型", scroll;
+Edit pos1=formonly.pos_i, tabIndex=25, title=%"索引";
+Edit typ_i=formonly.typ_i, tabIndex=26, title=%"參數類型", scroll;
 Phantom formonly.flg_i;
-Edit val_i=formonly.val_i, tabIndex=45, title=%"參數值", scroll;
+Edit val_i=formonly.val_i, tabIndex=27, title=%"參數值", scroll;
 END -- ATTRIBUTES
 
 INSTRUCTIONS

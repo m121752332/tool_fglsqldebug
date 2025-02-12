@@ -5,35 +5,36 @@
 
 SCHEMA formonly
 
-LAYOUT (text=%"SQL Statement statistics")
+LAYOUT (text=%"SQL 語法分析器")
 Grid Grid1
 {
- <T table1                                                                                                                             >
- [firstcm|fglcmd         |fglsql           |fglcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
- [firstcm|fglcmd         |fglsql           |fglcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
- [firstcm|fglcmd         |fglsql           |fglcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
- [firstcm|fglcmd         |fglsql           |fglcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
- [firstcm|fglcmd         |fglsql           |fglcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
+ <T table1                                                                                                                                      >
+ [firstcm|fglcmd         |fglsql           |fglcur|sqlcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
+ [firstcm|fglcmd         |fglsql           |fglcur|sqlcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
+ [firstcm|fglcmd         |fglsql           |fglcur|sqlcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
+ [firstcm|fglcmd         |fglsql           |fglcur|sqlcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
+ [firstcm|fglcmd         |fglsql           |fglcur|sqlcur|occur|sqler|sqlno|time_avg       |time_min       |time_max        |time_tot         ]
 }
 END -- Grid1
 END -- stmtstats
 
 ATTRIBUTES
 Table table1:table1, width = 135 characters;
-Edit firstcm=formonly.firstcmdid, tabIndex=1, title=%"Num";
-Edit fglcmd=formonly.fglcmd, tabIndex=2, title=%"Command", scroll;
-Edit fglsql=formonly.fglsql, tabIndex=3, title=%"SQL", scroll;
-Edit fglcur=formonly.fglcursor, tabIndex=4, title=%"Cursor", scroll;
-Edit occur=formonly.occurences, tabIndex=5, title=%"Occurrences";
-Edit sqler=formonly.sqlerrors, tabIndex=6, title=%"SQL Errors";
-Edit sqlno=formonly.sqlnotfnd, tabIndex=7, title=%"Not Founds";
-Edit time_avg=formonly.time_avg, tabIndex=8, title=%"Time AVG";
-Edit time_min=formonly.time_min, tabIndex=9, title=%"Time MIN";
-Edit time_max=formonly.time_max, tabIndex=10, title=%"Time MAX";
-Edit time_tot=formonly.time_tot, tabIndex=11, title=%"Time TOT";
+Edit firstcm=formonly.firstcmdid, tabIndex=1, title=%"行號";
+Edit fglcmd=formonly.fglcmd, tabIndex=2, title=%"指令", scroll;
+Edit fglsql=formonly.fglsql, tabIndex=3, title=%"SQL語法", scroll;
+Edit fglcur=formonly.fglcursor, tabIndex=4, title=%"Cursor 指標", scroll;
+Edit sqlcur=formonly.sqlcursor, tabIndex=5, title=%"語法指標", scroll;
+Edit occur=formonly.occurences, tabIndex=6, title=%"發生次數";
+Edit sqler=formonly.sqlerrors, tabIndex=7, title=%"SQL 錯誤";
+Edit sqlno=formonly.sqlnotfnd, tabIndex=8, title=%"丟失";
+Edit time_avg=formonly.time_avg, tabIndex=9, title=%"平均時間";
+Edit time_min=formonly.time_min, tabIndex=10, title=%"最少時間";
+Edit time_max=formonly.time_max, tabIndex=11, title=%"最多時間";
+Edit time_tot=formonly.time_tot, tabIndex=12, title=%"總合時間";
 END -- ATTRIBUTES
 
 INSTRUCTIONS
-SCREEN RECORD sr(formonly.firstcmdid,formonly.fglcmd,formonly.fglsql,formonly.fglcursor,formonly.occurences,formonly.sqlerrors,formonly.sqlnotfnd,formonly.time_avg,formonly.time_min,formonly.time_max,formonly.time_tot)
+SCREEN RECORD sr(formonly.firstcmdid,formonly.fglcmd,formonly.fglsql,formonly.fglcursor,formonly.sqlcursor,formonly.occurences,formonly.sqlerrors,formonly.sqlnotfnd,formonly.time_avg,formonly.time_min,formonly.time_max,formonly.time_tot)
 END -- INSTRUCTIONS
 
