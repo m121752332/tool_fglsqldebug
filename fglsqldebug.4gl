@@ -203,11 +203,11 @@ FUNCTION do_monitor(filename, force_reload)
            CALL reload_rows(DIALOG,params.*)
         ON ACTION f_cursor
            LET params.current_cursor = IIF(params.current_cursor IS NULL,
-                                           log_arr[arr_curr()].fglcursor, "")
+                                           log_arr[arr_curr()].sqlcursor, NULL)
            CALL reload_rows(DIALOG,params.*)
         ON ACTION f_source
            LET params.current_source = IIF(params.current_source IS NULL,
-                                           log_arr[arr_curr()].srcfile, "")
+                                           log_arr[arr_curr()].srcfile, NULL)
            CALL reload_rows(DIALOG,params.*)
     END DISPLAY
 
@@ -368,7 +368,7 @@ FUNCTION setup_dialog(d)
     LET row = d.getCurrentRow("sr")
     IF row>0 THEN
        LET s = (log_arr[row].srcfile IS NOT NULL)
-       LET c = (log_arr[row].fglcursor != "?") -- FALSE if NULL
+       LET c = (log_arr[row].sqlcursor IS NOT NULL)
        LET r = TRUE
     END IF
     CALL d.setActionActive("sr.source",s)
@@ -633,11 +633,11 @@ FUNCTION fill_cursor_list(cmb)
     IF NOT database_available() THEN RETURN END IF
     DECLARE c_cursor CURSOR FOR
        SELECT DISTINCT fglcursor, sqlcursor FROM command
-        WHERE fglcursor IS NOT NULL AND fglcursor != '?'
+        WHERE fglcursor IS NOT NULL --AND fglcursor != '?'
         ORDER BY fglcursor
     CALL cmb.addItem(NULL, "<All>")
     FOREACH c_cursor INTO fc, sc
-       CALL cmb.addItem(fc, SFMT("%1 (%2)",fc,sc))
+       CALL cmb.addItem(sc, SFMT("%1 (%2)",fc,sc))
     END FOREACH
 END FUNCTION
 
@@ -699,7 +699,8 @@ FUNCTION load_array(d,params)
 
     LET sql = "SELECT * FROM command WHERE 1=1"
     IF params.current_cursor IS NOT NULL THEN
-       LET sql = sql || SFMT(" AND fglcursor = '%1'",params.current_cursor)
+       --LET sql = sql || SFMT(" AND fglcursor = '%1'",params.current_cursor)
+       LET sql = sql || SFMT(" AND sqlcursor = '%1'",params.current_cursor)
     END IF
     IF params.current_source IS NOT NULL THEN
        LET sql = sql || SFMT(" AND srcfile = '%1'",params.current_source)
@@ -934,6 +935,10 @@ FUNCTION load_file(filename, force_reload)
 
         CALL extract_tail("SQL: ", line) RETURNING found, tail
         IF found THEN
+           WHILE tail.getLength()==0 -- SQL probably starts at next line?
+              IF ch.isEof() THEN EXIT WHILE END IF
+              LET tail = ch.readLine()
+           END WHILE
            IF cmd.cmdid IS NOT NULL THEN
               IF cmd.fglsql IS NULL THEN
                  LET cmd.fglsql = def_fglsql
@@ -1438,7 +1443,8 @@ FUNCTION collect_global_stats()
     DEFINE stat t_stmt_stats,
            l_fglcmd VARCHAR(30),
            l_fglsql VARCHAR(2000),
-           l_fglcursor VARCHAR(50)
+           l_fglcursor VARCHAR(50),
+           l_sqlcursor VARCHAR(50)
 
     WHENEVER ERROR CONTINUE
     DROP TABLE stmt_stats
@@ -1448,14 +1454,15 @@ FUNCTION collect_global_stats()
               fglcmd VARCHAR(30),
               fglsql VARCHAR(2000),
               fglcursor VARCHAR(50),
+              sqlcursor VARCHAR(50),
               occurences INTEGER,
               sqlerrors INTEGER,
               sqlnotfnd INTEGER,
               time_avg INTERVAL HOUR(9) TO FRACTION(5),
               time_min INTERVAL HOUR(9) TO FRACTION(5),
               time_max INTERVAL HOUR(9) TO FRACTION(5),
-              time_tot INTERVAL HOUR(9) TO FRACTION(5),
-              UNIQUE (fglcmd, fglsql, fglcursor)
+              time_tot INTERVAL HOUR(9) TO FRACTION(5)
+              --, UNIQUE (fglcmd, fglsql, fglcursor)
            )
 
     CALL fglt_progress_open("FGLSQLDEBUG 除錯工具 - 進度條",
@@ -1475,14 +1482,16 @@ FUNCTION collect_global_stats()
         LET l_fglcmd    = NVL(log_arr[x].fglcmd,"NONE")
         LET l_fglsql    = NVL(log_arr[x].fglsql,"NONE")
         LET l_fglcursor = NVL(log_arr[x].fglcursor,"NONE")
+        LET l_sqlcursor = NVL(log_arr[x].sqlcursor,"NONE")
         SELECT firstcmdid INTO cid FROM stmt_stats
          WHERE fglcmd    == l_fglcmd
            AND fglsql    == l_fglsql
            AND fglcursor == l_fglcursor
+           AND sqlcursor == l_sqlcursor
         IF sqlca.sqlcode==100 THEN
            CALL collect_statement_stats(x) RETURNING stat.*
            INSERT INTO stmt_stats
-              VALUES ( log_arr[x].cmdid, l_fglcmd, l_fglsql, l_fglcursor, stat.* )
+              VALUES ( log_arr[x].cmdid, l_fglcmd, l_fglsql, l_fglcursor, l_sqlcursor, stat.* )
         END IF 
     END FOR
     CALL fglt_progress_close()
@@ -1502,6 +1511,7 @@ FUNCTION show_global_stats()
                    fglcmd VARCHAR(30),
                    fglsql VARCHAR(2000),
                    fglcursor VARCHAR(50),
+                   sqlcursor VARCHAR(50),
                    occurences INTEGER,
                    sqlerrors INTEGER,
                    sqlnotfnd INTEGER,
